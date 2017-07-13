@@ -1,0 +1,14 @@
+body {
+    padding: 0px;
+    Margin: 0px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+
+input {
+    width: 300px !important;
+    height: 50px !important;
+    margin-top: 20px;
+}
+
