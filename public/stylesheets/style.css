@@ -4,11 +4,44 @@ body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-
-
 input {
-    width: 300px !important;
+
     height: 50px !important;
-    margin-top: 20px;
 }
 
+.introText {
+    font-size: 4vw;
+    padding-top: 2% ;
+    padding-bottom: 2%;
+}
+.title {
+    font-size: 2.2vw;
+    color:#0095ff;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+.at{
+
+    Border-radius:3px;
+    padding:0% 1%;
+    background-color: #000;
+    color: #fff;
+}
+
+input::-webkit-input-placeholder {
+    color: #0095ff !important;
+    font-size: 1.6vw;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+    color: #0095ff !important;
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+    color: #0095ff !important;
+}
+
+input:-ms-input-placeholder {
+    color: #0095ff !important;
+}
