@@ -1,0 +1,13 @@
+body {
+    padding: 0px;
+    Margin: 0px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.panel-default>.panel-heading {
+	background-color: #337ab7!important;
+	color: white!important;
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}

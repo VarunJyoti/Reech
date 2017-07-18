@@ -3,6 +3,10 @@ body {
     Margin: 0px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+.panel-default>.panel-heading {
+	background-color: #337ab7!important;
+	color: white!important;
+}
 
 input {
 
@@ -44,4 +48,9 @@ input::-moz-placeholder {  /* Firefox 19+ */
 
 input:-ms-input-placeholder {
     color: #0095ff !important;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
 }

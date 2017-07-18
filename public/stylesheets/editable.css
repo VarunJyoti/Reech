@@ -1,0 +1,87 @@
+
+.inputEditable-text-wrap,
+.inputEditable-input-wrap {
+  line-height: 1.5em;
+}
+
+.inputEditable-text-wrap > *,
+.inputEditable-input-wrap > * {
+  display: inherit;
+  line-height: inherit;
+  vertical-align: middle;
+  margin: 0;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+}
+
+.inputEditable-text-wrap > :nth-child(n + 2),
+.inputEditable-input-wrap > :nth-child(n + 2) {
+  margin-left: 10px;
+}
+
+.inputEditable-edit {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.inputEditable-text,
+.inputEditable-submit {
+  cursor: pointer;
+}
+
+.inputEditable-description {  
+  color: #ccc;
+  font-size: 0.85em;
+}
+
+.inputEditable-cancel {
+  color: #999;
+  text-decoration: none;
+}
+
+.inputEditable-input,
+.inputEditable-submit {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.inputEditable-input {
+  box-shadow: 2px 2px 2px rgba(0,0,0, 0.05) inset;
+  border-color: #ccc;
+  background-color: #fff;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.inputEditable-input:invalid {
+  border-color: #d9534f;
+  font-style: italic;
+}
+
+.inputEditable-input:focus:valid {
+  border-color: #5cb85c;
+}
+
+.inputEditable-input[disabled] {
+  border-color: #d7d7d7;
+  background-color: #f7f7f7;
+  color: #979797;
+}
+
+.inputEditable-submit {
+  background-color: transparent;
+  color: #337ab7;
+  font-weight: bold;
+}
+
+.inputEditable-text,
+.inputEditable-input {
+  padding-right: 6px;
+  padding-left: 6px;
+}
+
+.inputEditable img {
+  height: 20px;
+  vertical-align: middle;
+}

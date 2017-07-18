@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Reech</title>
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="./js/sammy.js"></script>
     <script type="text/javascript" src="js/overflow.js"></script>
     <script type="text/javascript" src="js/fullPage.js"></script>
     <script type="text/javascript" src="js/knockout-3.4.1.js"></script>
@@ -59,12 +58,12 @@
                         <div class="col-sm-1"></div>
 
                         <div class="col-sm-4">
-                            <input style="font-size:20px;" type="text"
+                            <input style="font-size:20px;" type="text" data-bind="value:licenseNumber"
                                    class="text-left input-sm form-control"
                                    placeholder="Enter your License Number" maxlength="15"/>
                         </div>
                         <div class="col-sm-2">
-                            <button class="btn btn-primary search-btn" style="margin-top:3%;">
+                            <button data-bind="click:getLicenseClick" class="btn btn-primary search-btn" style="margin-top:3%;">
                                 Get Started
                             </button>
                         </div>
@@ -79,7 +78,7 @@
     <div class="section">
         <div class="container-fluid">
             <div class="row" style="margin-top: 2%;">
-                <div class="col-sm-9">
+                <div class="col-sm-9 col-centered">
                     <div class="row">
                         <div class="col-sm-1"></div>
                         <div class="col-sm-2 " style="text-align: left;">
@@ -105,7 +104,6 @@
                     </div>
                     <div class="row" style="margin-top: 2%;">
                         <div class="col-sm-1"></div>
-
                         <div class="col-sm-2">
                             <img src="images/chat_greeen.png" class="img-responsive" alt="Chania">
                         </div>
@@ -116,9 +114,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </div>
 </div>
