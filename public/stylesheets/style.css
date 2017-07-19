@@ -9,7 +9,6 @@ body {
 }
 
 input {
-
     height: 50px !important;
 }
 
@@ -19,7 +18,7 @@ input {
     padding-bottom: 2%;
 }
 .title {
-    font-size: 2.2vw;
+    font-size: 4vw;
     color:#0095ff;
     font-weight: bold;
     margin-top: 2%;
@@ -28,14 +27,13 @@ input {
 .at{
 
     Border-radius:3px;
-    padding:0% 1%;
+    padding:0% 1% 1% 1%;
     background-color: #000;
     color: #fff;
 }
 
 input::-webkit-input-placeholder {
     color: #0095ff !important;
-    font-size: 1.6vw;
 }
 
 input:-moz-placeholder { /* Firefox 18- */
@@ -53,4 +51,21 @@ input:-ms-input-placeholder {
 .col-centered{
     float: none;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 763px) {
+    .phoneImage img{
+        height: 250px!important;
+        margin-top: 8%;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .chat img{
+        width: 80px !important;
+        margin-top: 8%;
+    }
+
+
+    .col-sm-8 h3{margin-top: 2%;text-align: center;}
 }
