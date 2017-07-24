@@ -50,37 +50,37 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Name</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: isNamePresent()" class="form-control-static">
-                                        <span data-bind="text: name"></span><a data-m="isNamePresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                    <p data-bind="visible: namePresent()" class="form-control-static">
+                                        <span data-bind="text: name"></span><a data-m="namePresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input data-bind="value: name, visible: !isNamePresent()" type="text" class="form-control" placeholder="Name">
+                                    <input data-bind="value: name, visible: !namePresent()" type="text" class="form-control" placeholder="Name">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: isEmailPresent()" class="form-control-static">
-                                        <span data-bind="text: email" ></span><a data-m="isEmailPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                    <p data-bind="visible: emailPresent()" class="form-control-static">
+                                        <span data-bind="text: email" ></span><a data-m="emailPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input data-bind="value: email, visible: !isEmailPresent()" type="text" class="form-control" placeholder="Email">
+                                    <input data-bind="value: email, visible: !emailPresent()" type="text" class="form-control" placeholder="Email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-3 control-label">Cell</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: isCellPresent()" class="form-control-static">
-                                        <span data-bind="text: cell"></span><a data-m="isCellPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                    <p data-bind="visible: cellPresent()" class="form-control-static">
+                                        <span data-bind="text: cell"></span><a data-m="cellPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input data-bind="value: cell, visible: !isCellPresent()" type="text" class="form-control" placeholder="Email">
+                                    <input data-bind="value: cell, visible: !cellPresent()" type="text" class="form-control" placeholder="Email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">MLS</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: isMlsPresent()" class="form-control-static">
-                                        <span data-bind="text: mls"></span><a data-m="isMlsPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                    <p data-bind="visible: mlsPresent()" class="form-control-static">
+                                        <span data-bind="text: mls"></span><a data-m="mlsPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <div id="bloodhound" data-bind="visible: !isMlsPresent()">
+                                    <div id="bloodhound" data-bind="visible: !mlsPresent()">
                                         <input data-bind="value: mls" class="form-control typeahead tt-input" type="text" placeholder="States of USA">
                                         <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Add new</button>
                                     </div>
@@ -102,10 +102,10 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Office name</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: isOfficeNamePresent()" class="form-control-static">
-                                        <span data-bind="text: officeName"></span><a data-m="isOfficeNamePresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                    <p data-bind="visible: officeNamePresent()" class="form-control-static">
+                                        <span data-bind="text: officeName"></span><a data-m="officeNamePresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <div id="bloodhound1" data-bind="visible: !isOfficeNamePresent()">
+                                    <div id="bloodhound1" data-bind="visible: !officeNamePresent()">
                                         <input data-bind="value: mls" class="form-control typeahead tt-input" type="text" placeholder="States of USA">
                                         <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal1">Add new</button>
                                     </div>
@@ -114,37 +114,37 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Office license</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: isOfficeLicensePresent()" class="form-control-static">
-                                        <span data-bind="text: officeLicense"></span><a data-m="isOfficeLicensePresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                    <p data-bind="visible: officeLicensePresent()" class="form-control-static">
+                                        <span data-bind="text: officeLicense"></span><a data-m="officeLicensePresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input data-bind="value: officeLicense, visible: !isOfficeLicensePresent()" type="text" class="form-control" placeholder="office License">
+                                    <input data-bind="value: officeLicense, visible: !officeLicensePresent()" type="text" class="form-control" placeholder="office License">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Office zip</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: isOfficeZipPresent()" class="form-control-static">
-                                        <span data-bind="text: officeZip"></span><a data-m="isOfficeZipPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                    <p data-bind="visible: officeZipPresent()" class="form-control-static">
+                                        <span data-bind="text: officeZip"></span><a data-m="officeZipPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input data-bind="value: officeZip, visible: !isOfficeZipPresent()" type="text" class="form-control" placeholder="office License">
+                                    <input data-bind="value: officeZip, visible: !officeZipPresent()" type="text" class="form-control" placeholder="office License">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Broker</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: isBrokerPresent()" class="form-control-static">
-                                        <span data-bind="text: broker"></span><a data-m="isBrokerPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                    <p data-bind="visible: brokerPresent()" class="form-control-static">
+                                        <span data-bind="text: broker"></span><a data-m="brokerPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input data-bind="value: broker, visible: !isBrokerPresent()" type="text" class="form-control" placeholder="office License">
+                                    <input data-bind="value: broker, visible: !brokerPresent()" type="text" class="form-control" placeholder="office License">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Broker Email</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: isBrokerEmailPresent()" class="form-control-static">
-                                        <span data-bind="text: brokerEmail"></span><a data-m="isBrokerEmailPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                    <p data-bind="visible: brokerEmailPresent()" class="form-control-static">
+                                        <span data-bind="text: brokerEmail"></span><a data-m="brokerEmailPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input data-bind="value: brokerEmail, visible: !isBrokerEmailPresent()" type="email" class="form-control" placeholder="office License">
+                                    <input data-bind="value: brokerEmail, visible: !brokerEmailPresent()" type="email" class="form-control" placeholder="office License">
                                 </div>
                             </div>
                         </div>

@@ -8,14 +8,34 @@ $(document).ready(function() {
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
-    /*$('.editable').inputEditable({
-        toggleAtRight: true,
-    });*/
+    const license = getParameterByName("license");
+
+    $.ajax({
+        url: "/license/" + license,
+        method: "GET",
+        success: function(res) {
+            mapValues(res);
+        }
+    });
+
+    function mapValues(obj) {
+        for (var prop in obj) {
+            vm[prop](obj[prop]);
+            if(obj[prop] = ""){
+                vm[prop+"Present"](false);
+            }else{
+                vm[prop+"Present"](true);
+            }
+        }
+    }
+
     var states = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.whitespace,
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        // `states` is an array of state names defined in "The Basics"
-        local: ["saad fd", "deddss ds", "ds"]
+        sufficient: 3,
+        remote: {
+            url: '/mls',
+        }
     });
 
     $('#bloodhound .typeahead').typeahead({
@@ -24,16 +44,17 @@ $(document).ready(function() {
         minLength: 1
     }, {
         name: 'states',
+        displayKey: 'value',
         source: states
     });
-     $('#bloodhound1 .typeahead').typeahead({
+    /* $('#bloodhound1 .typeahead').typeahead({
         hint: true,
         highlight: true,
         minLength: 1
     }, {
         name: 'states',
         source: states
-    });
+    });*/
 
     function viewModel() {
         var runningData = null;
@@ -48,15 +69,15 @@ $(document).ready(function() {
             officeZip: ko.observable(""),
             broker: ko.observable(""),
             brokerEmail: ko.observable(""),
-            isNamePresent: ko.observable(false),
-            isEmailPresent: ko.observable(false),
-            isCellPresent: ko.observable(true),
-            isMlsPresent: ko.observable(false),
-            isOfficeNamePresent: ko.observable(true),
-            isOfficeLicensePresent: ko.observable(false),
-            isOfficeZipPresent: ko.observable(false),
-            isBrokerPresent: ko.observable(false),
-            isBrokerEmailPresent: ko.observable(false),
+            namePresent: ko.observable(false),
+            emailPresent: ko.observable(false),
+            cellPresent: ko.observable(true),
+            mlsPresent: ko.observable(false),
+            officeNamePresent: ko.observable(true),
+            officeLicensePresent: ko.observable(false),
+            officeZipPresent: ko.observable(false),
+            brokerPresent: ko.observable(false),
+            brokerEmailPresent: ko.observable(false),
             makeEditable: makeEditable
         };
 

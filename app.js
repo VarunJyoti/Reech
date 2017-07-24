@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var apicache = require("apicache");
 var index = require('./routes/index');
+var license = require('./routes/license');
 
 process.on('uncaughtException', function (error) {
    console.log(error.stack);
@@ -31,11 +32,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use("/", license);
 
-/*app.use("/", scrapping);
-app.use("/", cancelled);
-app.use("/", diverted);
-app.use("/", rescheduled);*/
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
