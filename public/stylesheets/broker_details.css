@@ -15,3 +15,71 @@ body {
 .paddingLeft {
 	margin-left: 5px!important; 
 }
+
+#image-preview {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    overflow: hidden;
+    background-color: #e8e8e8;
+    color: #666;
+}
+
+#image-preview input {
+    /*line-height: 200px;
+    font-size: 100px;*/
+    position: absolute;
+    opacity: 0;
+    z-index: 10;
+}
+#image-preview label {
+    position: absolute;
+    z-index: 5;
+    opacity: 0.8;
+    cursor: pointer;
+    background-color: #bdc3c7;
+    /*width: 200px;*/
+    height: 25px;
+    font-size: 10px;
+    line-height: 25px;
+    text-transform: uppercase;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+}
+
+#image-upload-ins{
+
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+
+    color: #8e8e8e;
+}
+
+.lblUploadImage{
+    padding-top: 13%;
+    text-align: center;
+    color: #6d6d6d;
+}
+
+.divLblUploadImage{
+    height: 100px;
+    /*text-align: center!important;*/
+}
+
+@media screen and (max-width: 420px){
+    .lblUploadImage {
+        padding-top: 5%;
+        color: #6d6d6d;
+    }
+    .divLblUploadImage{
+        height: auto;
+        text-align: center;
+    }
+
+
+}
