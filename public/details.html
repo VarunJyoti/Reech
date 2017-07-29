@@ -3,37 +3,41 @@
 
 <head>
     <script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-90716822-1', 'auto');
-    ga('send', 'pageview');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-90716822-1', 'auto');
+        ga('send', 'pageview');
     </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="./stylesheets/typeahead.css" />
-    <link rel="stylesheet" type="text/css" href="./stylesheets/editable.css" />
-    <link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap-3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="./stylesheets/broker_details.css" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/typeahead.css"/>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/editable.css"/>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap-3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/broker_details.css"/>
     <title>Reech</title>
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.uploadPreview.min.js"></script>
     <script type="text/javascript" src="js/editable.js"></script>
     <script type="text/javascript" src="js/knockout-3.4.1.js"></script>
     <script type="text/javascript" src="js/broker_details.js"></script>
     <script type="text/javascript" src="js/typeahead.js"></script>
     <script type="text/javascript" src="./stylesheets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script type="text/javascript" src="js/jquery.uploadPreview.min.js"></script>
+
+
 </head>
 
 <body id="root">
-    <div class="container">
+<div class="container">
+    <form id="myForm" action="saveLicenseDetails" method="post">
         <div class='row'>
             <div class="col-md-6 col-centered">
                 <div class="panel panel-default">
@@ -52,50 +56,65 @@
                                 <label for="inputEmail3" class="col-sm-3 control-label">Name</label>
                                 <div class="col-sm-9">
                                     <p data-bind="visible: namePresent()" class="form-control-static">
-                                        <span data-bind="text: name"></span><a data-m="namePresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                        <span data-bind="text: name"></span><a data-m="namePresent" href="#"
+                                                                               data-bind="click: makeEditable"><i
+                                            class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input data-bind="value: name, visible: !namePresent()" type="text" class="form-control" placeholder="Name">
+                                    <input name="name" maxlength="50" data-bind="value: name, visible: !namePresent()" type="text"
+                                           class="form-control" placeholder="Name">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
                                 <div class="col-sm-9">
                                     <p data-bind="visible: emailPresent()" class="form-control-static">
-                                        <span data-bind="text: email" ></span><a data-m="emailPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                        <span data-bind="text: email"></span><a data-m="emailPresent" href="#"
+                                                                                data-bind="click: makeEditable"><i
+                                            class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input data-bind="value: email, visible: !emailPresent()" type="text" class="form-control" placeholder="Email">
+                                    <input name="email" maxlength="50" data-bind="value: email, visible: !emailPresent()" type="text"
+                                           class="form-control" placeholder="Email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-3 control-label">Cell</label>
                                 <div class="col-sm-9">
                                     <p data-bind="visible: cellPresent()" class="form-control-static">
-                                        <span data-bind="text: cell"></span><a data-m="cellPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                        <span data-bind="text: cell"></span><a data-m="cellPresent" href="#"
+                                                                               data-bind="click: makeEditable"><i
+                                            class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input data-bind="value: cell, visible: !cellPresent()" type="text" class="form-control" placeholder="Email">
+                                    <input name="cell" maxlength="12" data-bind="value: cell, visible: !cellPresent()" type="text"
+                                           class="form-control" placeholder="Cell">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">MLS</label>
                                 <div class="col-sm-9">
                                     <p data-bind="visible: mlsPresent()" class="form-control-static">
-                                        <span data-bind="text: mls"></span><a data-m="mlsPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                        <span data-bind="text: mls"></span><a data-m="mlsPresent" href="#"
+                                                                              data-bind="click: makeEditable"><i
+                                            class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
                                     <div id="bloodhound" data-bind="visible: !mlsPresent()">
-                                        <input data-bind="value: mls" class="form-control typeahead tt-input" type="text" placeholder="States of USA">
-                                        <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Add new</button>
+                                        <input name="mls" maxlength="50" data-bind="value: mls" class="form-control typeahead tt-input"
+                                               type="text" placeholder="States of USA">
+                                        <button class="btn btn-primary btn-xs" data-toggle="modal"
+                                                data-target="#myModal">Add new
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-1"></div>
                                 <div class="col-sm-3">
-                                <div class="col-centered" id="image-preview">
+                                    <div class="col-centered" id="image-preview">
                                         <label for="image-upload" id="image-label">Choose File</label>
-                                        <input type="file" name="image" id="image-upload" />
-                                </div></div>
+                                        <input type="file" name="image" id="image-upload"/>
+                                    </div>
+                                </div>
                                 <div class="col-sm-5 col-centered divLblUploadImage">
-                                <label class="lblUploadImage">Upload new image<br>or change image</label>
+                                    <label class="lblUploadImage">Upload new image<br>or change image</label>
                                 </div>
                             </div>
                         </div>
@@ -115,11 +134,16 @@
                                 <label class="col-sm-3 control-label">Office name</label>
                                 <div class="col-sm-9">
                                     <p data-bind="visible: officeNamePresent()" class="form-control-static">
-                                        <span data-bind="text: officeName"></span><a data-m="officeNamePresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                        <span data-bind="text: officeName"></span><a data-m="officeNamePresent" href="#"
+                                                                                     data-bind="click: makeEditable"><i
+                                            class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
                                     <div id="bloodhound1" data-bind="visible: !officeNamePresent()">
-                                        <input data-bind="value: mls" class="form-control typeahead tt-input" type="text" placeholder="States of USA">
-                                        <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal1">Add new</button>
+                                        <input name="officeName" maxlength="50" data-bind="value: mls" class="form-control typeahead tt-input"
+                                               type="text" placeholder="Office Name">
+                                        <button class="btn btn-primary btn-xs" data-toggle="modal"
+                                                data-target="#myModal1">Add new
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -127,36 +151,59 @@
                                 <label class="col-sm-3 control-label">Office license</label>
                                 <div class="col-sm-9">
                                     <p data-bind="visible: officeLicensePresent()" class="form-control-static">
-                                        <span data-bind="text: officeLicense"></span><a data-m="officeLicensePresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                        <span data-bind="text: officeLicense"></span><a data-m="officeLicensePresent"
+                                                                                        href="#"
+                                                                                        data-bind="click: makeEditable"><i
+                                            class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input data-bind="value: officeLicense, visible: !officeLicensePresent()" type="text" class="form-control" placeholder="office License">
+                                    <input name="officeLicense" maxlength="50" data-bind="value: officeLicense, visible: !officeLicensePresent()"
+                                           type="text" class="form-control" placeholder="Office License">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Office zip</label>
                                 <div class="col-sm-9">
                                     <p data-bind="visible: officeZipPresent()" class="form-control-static">
-                                        <span data-bind="text: officeZip"></span><a data-m="officeZipPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                        <span data-bind="text: officeZip"></span><a data-m="officeZipPresent" href="#"
+                                                                                    data-bind="click: makeEditable"><i
+                                            class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input data-bind="value: officeZip, visible: !officeZipPresent()" type="text" class="form-control" placeholder="office License">
+                                    <input name="officeZip" maxlength="50" data-bind="value: officeZip, visible: !officeZipPresent()" type="text"
+                                           class="form-control" placeholder="Office Zip">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Broker</label>
                                 <div class="col-sm-9">
                                     <p data-bind="visible: brokerPresent()" class="form-control-static">
-                                        <span data-bind="text: broker"></span><a data-m="brokerPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                        <span data-bind="text: broker"></span><a data-m="brokerPresent" href="#"
+                                                                                 data-bind="click: makeEditable"><i
+                                            class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input data-bind="value: broker, visible: !brokerPresent()" type="text" class="form-control" placeholder="office License">
+                                    <input name="broker" maxlength="50" data-bind="value: broker, visible: !brokerPresent()" type="text"
+                                           class="form-control" placeholder="Broker">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Broker Email</label>
                                 <div class="col-sm-9">
                                     <p data-bind="visible: brokerEmailPresent()" class="form-control-static">
-                                        <span data-bind="text: brokerEmail"></span><a data-m="brokerEmailPresent" href="#" data-bind="click: makeEditable"><i class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                        <span data-bind="text: brokerEmail"></span><a data-m="brokerEmailPresent"
+                                                                                      href="#"
+                                                                                      data-bind="click: makeEditable"><i
+                                            class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input data-bind="value: brokerEmail, visible: !brokerEmailPresent()" type="email" class="form-control" placeholder="office License">
+                                    <input name="brokerEmail" maxlength="50" data-bind="value: brokerEmail, visible: !brokerEmailPresent()" type="email"
+                                           class="form-control" placeholder="Broker Email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3">
+                                    <button type="button" class="btn btn-outline-secondary btn-block">< Back</button>
+                                </div>
+                                <div class="col-sm-9">
+                                    <button class="btn btn-primary btn-block" type="submit">Done
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -164,57 +211,60 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Add your association</h4>
-                </div>
-                <div class="modal-body">
-                    <input type="text" class="form-control" placeholder="Enter association name">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+    </form>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Add your association</h4>
+            </div>
+            <div class="modal-body">
+                <input name="associationName" maxlength="50" type="text" class="form-control" placeholder="Enter association name">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Add your brokerage</h4>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Add your brokerage</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input name="brokerageName" maxlength="50" type="text" class="form-control" placeholder="Enter broker name">
                 </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Enter broker name">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Enter brokerage license">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Enter broker email">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Enter zip">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Enter company(optional)">
-                    </div>
+                <div class="form-group">
+                    <input name="brokerageLicense" maxlength="50" type="text" class="form-control" placeholder="Enter brokerage license">
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="form-group">
+                    <input name="brokerageEmail" maxlength="50" type="email" class="form-control" placeholder="Enter broker email">
                 </div>
+                <div class="form-group">
+                    <input name="brokerageZip" maxlength="50" type="text" class="form-control" placeholder="Enter zip">
+                </div>
+                <div class="form-group">
+                    <input name="brokerageCompany" maxlength="50"  type="text" class="form-control" placeholder="Enter company (optional)">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
+</div>
 </body>
 
 </html>

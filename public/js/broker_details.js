@@ -1,4 +1,9 @@
 $(document).ready(function() {
+    // bind 'myForm' and provide a simple callback function
+    $('#myForm').ajaxForm(function() {
+        alert("Thank you for your comment!");
+    });
+
     $.uploadPreview({
         input_field: "#image-upload",   // Default: .image-upload
         preview_box: "#image-preview",  // Default: .image-preview
