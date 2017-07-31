@@ -34,12 +34,18 @@ $(document).ready(function() {
 
     function mapValues(obj) {
         for (var prop in obj) {
-            vm[prop](obj[prop]);
-            if(obj[prop] = ""){
-                vm[prop+"Present"](false);
-            }else{
-                vm[prop+"Present"](true);
+            var prop1 = prop.replace(/\s/g, "");
+            if(vm[prop1]){
+                vm[prop1](obj[prop]);
             }
+            if(vm[prop1+"Present"]){
+                if(obj[prop] = ""){
+                    vm[prop1+"Present"](false);
+                }else{
+                    vm[prop1+"Present"](true);
+                }
+            }
+            
         }
     }
 
@@ -73,23 +79,23 @@ $(document).ready(function() {
     function viewModel() {
         var runningData = null;
         var model = {
-            licenseNumber: ko.observable(getParameterByName("")),
-            name: ko.observable(""),
-            email: ko.observable(""),
-            cell: ko.observable("saa"),
+            licenseNumber: ko.observable(getParameterByName("license")),
+            FirstName: ko.observable(""),
+            PriEmail: ko.observable(""),
+            PriPhone: ko.observable(""),
             mls: ko.observable(""),
-            officeName: ko.observable("sfdfd"),
-            officeLicense: ko.observable(""),
-            officeZip: ko.observable(""),
+            OfficeName: ko.observable(""),
+            OfficeLic: ko.observable(""),
+            Zip: ko.observable(""),
             broker: ko.observable(""),
             brokerEmail: ko.observable(""),
-            namePresent: ko.observable(false),
-            emailPresent: ko.observable(false),
-            cellPresent: ko.observable(true),
+            FirstNamePresent: ko.observable(false),
+            PriEmailPresent: ko.observable(false),
+            PriPhonePresent: ko.observable(false),
             mlsPresent: ko.observable(false),
-            officeNamePresent: ko.observable(true),
-            officeLicensePresent: ko.observable(false),
-            officeZipPresent: ko.observable(false),
+            OfficeNamePresent: ko.observable(false),
+            OfficeLicPresent: ko.observable(false),
+            ZipPresent: ko.observable(false),
             brokerPresent: ko.observable(false),
             brokerEmailPresent: ko.observable(false),
             makeEditable: makeEditable

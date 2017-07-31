@@ -55,36 +55,36 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Name</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: namePresent()" class="form-control-static">
-                                        <span data-bind="text: name"></span><a data-m="namePresent" href="#"
+                                    <p data-bind="visible: FirstNamePresent()" class="form-control-static">
+                                        <span data-bind="text: FirstName"></span><a data-m="FirstNamePresent" href="#"
                                                                                data-bind="click: makeEditable"><i
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input name="name" maxlength="50" data-bind="value: name, visible: !namePresent()" type="text"
+                                    <input name="name" maxlength="50" data-bind="value: FirstName, visible: !FirstNamePresent()" type="text"
                                            class="form-control" placeholder="Name">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: emailPresent()" class="form-control-static">
-                                        <span data-bind="text: email"></span><a data-m="emailPresent" href="#"
+                                    <p data-bind="visible: PriEmailPresent()" class="form-control-static">
+                                        <span data-bind="text: PriEmail"></span><a data-m="PriEmailPresent" href="#"
                                                                                 data-bind="click: makeEditable"><i
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input name="email" maxlength="50" data-bind="value: email, visible: !emailPresent()" type="text"
+                                    <input name="email" maxlength="50" data-bind="value: PriEmail, visible: !PriEmailPresent()" type="text"
                                            class="form-control" placeholder="Email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword3" class="col-sm-3 control-label">Cell</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: cellPresent()" class="form-control-static">
-                                        <span data-bind="text: cell"></span><a data-m="cellPresent" href="#"
+                                    <p data-bind="visible: PriPhonePresent()" class="form-control-static">
+                                        <span data-bind="text: PriPhone"></span><a data-m="PriPhonePresent" href="#"
                                                                                data-bind="click: makeEditable"><i
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input name="cell" maxlength="12" data-bind="value: cell, visible: !cellPresent()" type="text"
+                                    <input name="cell" maxlength="12" data-bind="value: PriPhone, visible: !PriPhonePresent()" type="text"
                                            class="form-control" placeholder="Cell">
                                 </div>
                             </div>
@@ -133,13 +133,13 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Office name</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: officeNamePresent()" class="form-control-static">
-                                        <span data-bind="text: officeName"></span><a data-m="officeNamePresent" href="#"
+                                    <p data-bind="visible: OfficeNamePresent()" class="form-control-static">
+                                        <span data-bind="text: OfficeName"></span><a data-m="OfficeNamePresent" href="#"
                                                                                      data-bind="click: makeEditable"><i
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <div id="bloodhound1" data-bind="visible: !officeNamePresent()">
-                                        <input name="officeName" maxlength="50" data-bind="value: mls" class="form-control typeahead tt-input"
+                                    <div id="bloodhound1" data-bind="visible: !OfficeNamePresent()">
+                                        <input name="officeName" maxlength="50" data-bind="value: OfficeName" class="form-control typeahead tt-input"
                                                type="text" placeholder="Office Name">
                                         <button class="btn btn-primary btn-xs" data-toggle="modal"
                                                 data-target="#myModal1">Add new
@@ -150,25 +150,25 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Office license</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: officeLicensePresent()" class="form-control-static">
-                                        <span data-bind="text: officeLicense"></span><a data-m="officeLicensePresent"
+                                    <p data-bind="visible: OfficeLicPresent()" class="form-control-static">
+                                        <span data-bind="text: OfficeLic"></span><a data-m="OfficeLicPresent"
                                                                                         href="#"
                                                                                         data-bind="click: makeEditable"><i
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input name="officeLicense" maxlength="50" data-bind="value: officeLicense, visible: !officeLicensePresent()"
+                                    <input name="officeLicense" maxlength="50" data-bind="value: OfficeLic, visible: !OfficeLicPresent()"
                                            type="text" class="form-control" placeholder="Office License">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Office zip</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: officeZipPresent()" class="form-control-static">
-                                        <span data-bind="text: officeZip"></span><a data-m="officeZipPresent" href="#"
+                                    <p data-bind="visible: ZipPresent()" class="form-control-static">
+                                        <span data-bind="text: Zip"></span><a data-m="ZipPresent" href="#"
                                                                                     data-bind="click: makeEditable"><i
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input name="officeZip" maxlength="50" data-bind="value: officeZip, visible: !officeZipPresent()" type="text"
+                                    <input name="officeZip" maxlength="50" data-bind="value: Zip, visible: !ZipPresent()" type="text"
                                            class="form-control" placeholder="Office Zip">
                                 </div>
                             </div>

@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var apicache = require("apicache");
 var index = require('./routes/index');
 var license = require('./routes/license');
+const fileUpload = require('express-fileupload');
 
 process.on('uncaughtException', function (error) {
    console.log(error.stack);
