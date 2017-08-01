@@ -50,21 +50,19 @@ $(document).ready(function() {
     }
 
     var states = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('association_name'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        sufficient: 3,
-        remote: {
-            url: '/mls',
-        }
+        prefetch: '/mls'
+        
     });
+
 
     $('#bloodhound .typeahead').typeahead({
         hint: true,
         highlight: true,
         minLength: 1
     }, {
-        name: 'states',
-        displayKey: 'value',
+        displayKey: 'association_name',
         source: states
     });
     /* $('#bloodhound1 .typeahead').typeahead({
@@ -81,6 +79,7 @@ $(document).ready(function() {
         var model = {
             licenseNumber: ko.observable(getParameterByName("license")),
             FirstName: ko.observable(""),
+            LastName: ko.observable(""),
             PriEmail: ko.observable(""),
             PriPhone: ko.observable(""),
             mls: ko.observable(""),
@@ -90,6 +89,7 @@ $(document).ready(function() {
             broker: ko.observable(""),
             brokerEmail: ko.observable(""),
             FirstNamePresent: ko.observable(false),
+            LastNamePresent: ko.observable(false),
             PriEmailPresent: ko.observable(false),
             PriPhonePresent: ko.observable(false),
             mlsPresent: ko.observable(false),

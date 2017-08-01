@@ -53,7 +53,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Name</label>
+                                <label for="inputEmail3" class="col-sm-3 control-label">First name</label>
                                 <div class="col-sm-9">
                                     <p data-bind="visible: FirstNamePresent()" class="form-control-static">
                                         <span data-bind="text: FirstName"></span><a data-m="FirstNamePresent" href="#"
@@ -61,6 +61,18 @@
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
                                     <input name="name" maxlength="50" data-bind="value: FirstName, visible: !FirstNamePresent()" type="text"
+                                           class="form-control" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Last name</label>
+                                <div class="col-sm-9">
+                                    <p data-bind="visible: LastNamePresent()" class="form-control-static">
+                                        <span data-bind="text: LastName"></span><a data-m="LastNamePresent" href="#"
+                                                                               data-bind="click: makeEditable"><i
+                                            class="paddingLeft glyphicon glyphicon-edit"></i></a>
+                                    </p>
+                                    <input name="name" maxlength="50" data-bind="value: LastName, visible: !LastNamePresent()" type="text"
                                            class="form-control" placeholder="Name">
                                 </div>
                             </div>
@@ -98,7 +110,7 @@
                                     </p>
                                     <div id="bloodhound" data-bind="visible: !mlsPresent()">
                                         <input name="mls" maxlength="50" data-bind="value: mls" class="form-control typeahead tt-input"
-                                               type="text" placeholder="States of USA">
+                                               type="text" placeholder="Association">
                                         <button class="btn btn-primary btn-xs" data-toggle="modal"
                                                 data-target="#myModal">Add new
                                         </button>
