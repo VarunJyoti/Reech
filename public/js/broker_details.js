@@ -39,7 +39,7 @@ $(document).ready(function() {
                 vm[prop1](obj[prop]);
             }
             if (vm[prop1 + "Present"]) {
-                vm[prop1 + "Present"](obj[prop] = "");
+                vm[prop1 + "Present"](!obj[prop] == "");
             }
         }
     }
@@ -48,7 +48,6 @@ $(document).ready(function() {
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('association_name'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         prefetch: '/mls'
-        
     });
 
 
@@ -105,8 +104,10 @@ $(document).ready(function() {
         var data = {}
         data["association_name"] = m.association_name().replace(/\s/g, "");
         ajaxCall("/saveAssociation", "POST",
-            this._hideModel("myModal"),
-            () = > {alert("failure");},
+            function(){
+                _hideModel("myModal");
+            },
+            () => {alert("failure");},
             data);
     }
 
@@ -116,9 +117,9 @@ $(document).ready(function() {
 
         var data = {}
         data["association_name"] = m.association_name().replace(/\s/g, "");
-        ajaxCall("/saveOfficeDetails", "POST",
-            this._hideModel("myModal1"),
-            () = > {alert("failure");},
+        ajaxCall("/saveOfficeDetails", "POST",function(){
+                _hideModel("myModal1");
+        }, () => {alert("failure");},
         data);
     }
 
