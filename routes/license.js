@@ -30,14 +30,9 @@ router.get('/license/:id', function(req, res, next) {
 router.post('/saveLicenseDetails', upload.single('sampleFile'), function(req, res, next) {
     MongoClient.connect(dbHost, function(err, db) {
         if (err) throw err
-        var data = req.body;
-        db.collection('tempInfo').insert({
-            name: data.name,
-            email: data.email,
-            cell: data.cell,
-            mls: data.mls,
-            officeName: data.officeName
-        });
+        var data =setUpsertObj(req.body)
+        var upsertObject={}
+        db.collection('tempInfo').update({"licenseNumber": data["licenseNumber"]},data,{ "upsert": true });
 
         db.collection('tempInfo').find().toArray(function(err, result) {
             if (err) throw err
@@ -50,8 +45,18 @@ router.post('/saveLicenseDetails', upload.single('sampleFile'), function(req, re
             officeName: "sasa"
         });
     })
-
 });
+
+function setUpsertObj(obj) {
+    var data = {};
+    for (var prop in obj) {
+        var v = obj[prop].replace(/\s/g, "")
+        if (v != "") {
+            data[prop] = v
+        }
+    }
+    return data;
+}
 
 router.get('/mls', function(req, res, next) {
 	var ref = db.ref('associationDB');

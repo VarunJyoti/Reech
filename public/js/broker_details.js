@@ -38,14 +38,9 @@ $(document).ready(function() {
             if(vm[prop1]){
                 vm[prop1](obj[prop]);
             }
-            if(vm[prop1+"Present"]){
-                if(obj[prop] = ""){
-                    vm[prop1+"Present"](false);
-                }else{
-                    vm[prop1+"Present"](true);
-                }
+            if (vm[prop1 + "Present"]) {
+                vm[prop1 + "Present"](obj[prop] = "");
             }
-            
         }
     }
 

@@ -31,13 +31,11 @@
     <script type="text/javascript" src="./stylesheets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
     <script type="text/javascript" src="js/jquery.uploadPreview.min.js"></script>
-
-
 </head>
 
 <body id="root">
 <div class="container">
-    <form id="myForm" action="saveLicenseDetails" method="post">
+    <form id="myForm" action="/saveLicenseDetails" method="post"  encType="multipart/form-data">
         <div class='row'>
             <div class="col-md-6 col-centered">
                 <div class="panel panel-default">
@@ -50,6 +48,7 @@
                                 <label for="inputEmail3" class="col-sm-3 control-label">License</label>
                                 <div class="col-sm-9">
                                     <p data-bind="text: licenseNumber" class="editable form-control-static"></p>
+                                    <input name="licenseNumber" type="hidden" data-bind="value: licenseNumber">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -57,11 +56,11 @@
                                 <div class="col-sm-9">
                                     <p data-bind="visible: FirstNamePresent()" class="form-control-static">
                                         <span data-bind="text: FirstName"></span><a data-m="FirstNamePresent" href="#"
-                                                                               data-bind="click: makeEditable"><i
+                                                                                    data-bind="click: makeEditable"><i
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input name="name" maxlength="50" data-bind="value: FirstName, visible: !FirstNamePresent()" type="text"
-                                           class="form-control" placeholder="Name">
+                                    <input name="firstName" maxlength="50" data-bind="value: FirstName, visible: !FirstNamePresent()" type="text"
+                                           class="form-control" placeholder="First Name">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -72,8 +71,8 @@
                                                                                data-bind="click: makeEditable"><i
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input name="name" maxlength="50" data-bind="value: LastName, visible: !LastNamePresent()" type="text"
-                                           class="form-control" placeholder="Name">
+                                    <input name="lastName" maxlength="50" data-bind="value: LastName, visible: !LastNamePresent()" type="text"
+                                           class="form-control" placeholder="Last Name">
                                 </div>
                             </div>
                             <div class="form-group">
