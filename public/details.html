@@ -110,7 +110,7 @@
                                     <div id="bloodhound" data-bind="visible: !mlsPresent()">
                                         <input name="mls" maxlength="50" data-bind="value: mls" class="form-control typeahead tt-input"
                                                type="text" placeholder="Association">
-                                        <button class="btn btn-primary btn-xs" data-toggle="modal"
+                                        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal"
                                                 data-target="#myModal">Add new
                                         </button>
                                     </div>
@@ -152,7 +152,7 @@
                                     <div id="bloodhound1" data-bind="visible: !OfficeNamePresent()">
                                         <input name="officeName" maxlength="50" data-bind="value: OfficeName" class="form-control typeahead tt-input"
                                                type="text" placeholder="Office Name">
-                                        <button class="btn btn-primary btn-xs" data-toggle="modal"
+                                        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal"
                                                 data-target="#myModal1">Add new
                                         </button>
                                     </div>
@@ -234,11 +234,12 @@
                 <h4 class="modal-title">Add your association</h4>
             </div>
             <div class="modal-body">
-                <input name="associationName" maxlength="50" type="text" class="form-control" placeholder="Enter association name">
+                <input name="association_name" maxlength="50" type="text" class="form-control"
+                       data-bind="value: association_name" placeholder="Enter association name">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" data-bind="click: saveAssociation">Save changes</button>
             </div>
         </div>
     </div>
@@ -271,7 +272,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" data-bind="click: saveOfficeDetails">Save changes</button>
             </div>
         </div>
     </div>

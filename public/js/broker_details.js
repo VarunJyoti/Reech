@@ -93,23 +93,53 @@ $(document).ready(function() {
             ZipPresent: ko.observable(false),
             brokerPresent: ko.observable(false),
             brokerEmailPresent: ko.observable(false),
-            makeEditable: makeEditable
+            association_name:ko.observable(""),
+            makeEditable: makeEditable,
+            saveAssociation:saveAssociation,
+            saveOfficeDetails:saveOfficeDetails
         };
-
         return model;
     }
 
+    function saveAssociation(m, e) {
+        var data = {}
+        data["association_name"] = m.association_name().replace(/\s/g, "");
+        ajaxCall("/saveAssociation", "POST",
+            this._hideModel("myModal"),
+            () = > {alert("failure");},
+            data);
+    }
+
+    function saveOfficeDetails(m, e) {
+        alert("in progress...");
+        return;
+
+        var data = {}
+        data["association_name"] = m.association_name().replace(/\s/g, "");
+        ajaxCall("/saveOfficeDetails", "POST",
+            this._hideModel("myModal1"),
+            () = > {alert("failure");},
+        data);
+    }
+
+    function _hideModel(modalId) {
+        $('#' + modalId).modal('toggle');
+    }
+    
     function makeEditable(m,e){
         m[e.target.parentElement.getAttribute("data-m")](false);
     }
+    
     var serverBusy = function() {
         alert("Server too busy. Please try after some time.");
         $("#overlay").hide();
     }
 
-    function ajaxCall(url, success, failure) {
+    function ajaxCall(url, method, success, failure, data) {
         $.ajax({
             url: url,
+            method: method,
+            data: data,
             success: success,
             error: failure,
             timeout: 9000

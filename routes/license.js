@@ -31,12 +31,22 @@ router.post('/saveLicenseDetails', upload.single('sampleFile'), function(req, re
     MongoClient.connect(dbHost, function(err, db) {
         if (err) throw err
         var data =setUpsertObj(req.body)
-        var upsertObject={}
-        db.collection('tempInfo').update({"licenseNumber": data["licenseNumber"]},data,{ "upsert": true });
+        db.collection('agentDB').update({"licenseNumber": data["licenseNumber"]},data,{ "upsert": true });
+        res.json({
+            name: "abc",
+            email: "abc@sa.com",
+            cell: "637263872",
+            mls: "sasa",
+            officeName: "sasa"
+        });
+    })
+});
 
-        db.collection('tempInfo').find().toArray(function(err, result) {
-            if (err) throw err
-        })
+router.post('/saveAssociation', function(req, res, next) {
+    MongoClient.connect(dbHost, function(err, db) {
+        if (err) throw err
+        var data =setUpsertObj(req.body)
+        db.collection('associationDB').update({"association_name": data["association_name"]},data,{ "upsert": true });
         res.json({
             name: "abc",
             email: "abc@sa.com",
