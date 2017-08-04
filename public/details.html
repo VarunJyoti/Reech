@@ -161,13 +161,13 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Office license</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: OfficeLicPresent()" class="form-control-static">
-                                        <span data-bind="text: OfficeLic"></span><a data-m="OfficeLicPresent"
+                                    <p data-bind="visible: emp_lic_numberPresent()" class="form-control-static">
+                                        <span data-bind="text: emp_lic_number"></span><a data-m="emp_lic_numberPresent"
                                                                                         href="#"
                                                                                         data-bind="click: makeEditable"><i
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input name="officeLicense" maxlength="50" data-bind="value: OfficeLic, visible: !OfficeLicPresent()"
+                                    <input name="emp_lic_number" maxlength="50" data-bind="value: emp_lic_number, visible: !emp_lic_numberPresent()"
                                            type="text" class="form-control" placeholder="Office License">
                                 </div>
                             </div>
@@ -186,13 +186,13 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Broker</label>
                                 <div class="col-sm-9">
-                                    <p data-bind="visible: brokerPresent()" class="form-control-static">
-                                        <span data-bind="text: broker"></span><a data-m="brokerPresent" href="#"
+                                    <p data-bind="visible: empl_namePresent()" class="form-control-static">
+                                        <span data-bind="text: empl_name"></span><a data-m="empl_namePresent" href="#"
                                                                                  data-bind="click: makeEditable"><i
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input name="broker" maxlength="50" data-bind="value: broker, visible: !brokerPresent()" type="text"
-                                           class="form-control" placeholder="Broker">
+                                    <input name="empl_name" maxlength="50" data-bind="value: empl_name, visible: !empl_namePresent()" type="text"
+                                           class="form-control" placeholder="Broker name">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -200,8 +200,7 @@
                                 <div class="col-sm-9">
                                     <p data-bind="visible: brokerEmailPresent()" class="form-control-static">
                                         <span data-bind="text: brokerEmail"></span><a data-m="brokerEmailPresent"
-                                                                                      href="#"
-                                                                                      data-bind="click: makeEditable"><i
+                                                                                      href="#" data-bind="click: makeEditable"><i
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
                                     <input name="brokerEmail" maxlength="50" data-bind="value: brokerEmail, visible: !brokerEmailPresent()" type="email"
@@ -255,19 +254,24 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <input name="brokerageName" maxlength="50" type="text" class="form-control" placeholder="Enter broker name">
+                    <input name="brokerageName" maxlength="50" type="text" class="form-control" placeholder="Enter broker name"
+                           data-bind="value: empl_name">
                 </div>
                 <div class="form-group">
-                    <input name="brokerageLicense" maxlength="50" type="text" class="form-control" placeholder="Enter brokerage license">
+                    <input name="brokerageLicense" maxlength="50" type="text" class="form-control" placeholder="Enter brokerage license"
+                           data-bind="value: emp_lic_number">
                 </div>
                 <div class="form-group">
-                    <input name="brokerageEmail" maxlength="50" type="email" class="form-control" placeholder="Enter broker email">
+                    <input name="brokerageEmail" maxlength="50" type="email" class="form-control" placeholder="Enter broker email"
+                           data-bind="value: brokerEmail">
                 </div>
                 <div class="form-group">
-                    <input name="brokerageZip" maxlength="50" type="text" class="form-control" placeholder="Enter zip">
+                    <input name="brokerageZip" maxlength="50" type="text" class="form-control" placeholder="Enter zip"
+                           data-bind="value: Zip">
                 </div>
                 <div class="form-group">
-                    <input name="brokerageCompany" maxlength="50"  type="text" class="form-control" placeholder="Enter company (optional)">
+                    <input name="brokerageCompany" maxlength="50"  type="text" class="form-control" placeholder="Enter company"
+                           data-bind="value: OfficeName">
                 </div>
             </div>
             <div class="modal-footer">

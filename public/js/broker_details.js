@@ -78,9 +78,9 @@ $(document).ready(function() {
             PriPhone: ko.observable(""),
             mls: ko.observable(""),
             OfficeName: ko.observable(""),
-            OfficeLic: ko.observable(""),
+            emp_lic_number: ko.observable(""),
             Zip: ko.observable(""),
-            broker: ko.observable(""),
+            empl_name: ko.observable(""),
             brokerEmail: ko.observable(""),
             FirstNamePresent: ko.observable(false),
             LastNamePresent: ko.observable(false),
@@ -88,9 +88,9 @@ $(document).ready(function() {
             PriPhonePresent: ko.observable(false),
             mlsPresent: ko.observable(false),
             OfficeNamePresent: ko.observable(false),
-            OfficeLicPresent: ko.observable(false),
+            emp_lic_numberPresent: ko.observable(false),
             ZipPresent: ko.observable(false),
-            brokerPresent: ko.observable(false),
+            empl_namePresent: ko.observable(false),
             brokerEmailPresent: ko.observable(false),
             association_name:ko.observable(""),
             makeEditable: makeEditable,
@@ -104,23 +104,20 @@ $(document).ready(function() {
         var data = {}
         data["association_name"] = m.association_name().replace(/\s/g, "");
         ajaxCall("/saveAssociation", "POST",
-            function(){
-                _hideModel("myModal");
-            },
-            () => {alert("failure");},
+            function () {_hideModel("myModal");},
+            function() {alert("failure");},
             data);
     }
 
     function saveOfficeDetails(m, e) {
-        alert("in progress...");
-        return;
-
         var data = {}
-        data["association_name"] = m.association_name().replace(/\s/g, "");
-        ajaxCall("/saveOfficeDetails", "POST",function(){
-                _hideModel("myModal1");
-        }, () => {alert("failure");},
-        data);
+        data["emp_lic_number"] = m.emp_lic_number().replace(/\s/g, "");
+        data["empl_name"] = m.empl_name().replace(/\s/g, "");
+        ajaxCall("/saveOfficeDetails",
+            "POST",
+            function(){_hideModel("myModal1");},
+            function(){alert("failure");},
+            data);
     }
 
     function _hideModel(modalId) {

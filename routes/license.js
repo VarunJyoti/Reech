@@ -17,7 +17,7 @@ const db = admin.database();
 /* GET home page. */
 router.get('/license/:id', function(req, res, next) {
     var license = req.params.id || "";
-    var ref = db.ref('agentDB').orderByChild("LicNo").equalTo(license);
+    var ref = db.ref('agentDB').orderByChild("lic_number").equalTo(license);
 
     ref.on("value", function(s) {
         var obj = s.val();
@@ -33,11 +33,7 @@ router.post('/saveLicenseDetails', upload.single('sampleFile'), function(req, re
         var data =setUpsertObj(req.body)
         db.collection('agentDB').update({"licenseNumber": data["licenseNumber"]},data,{ "upsert": true });
         res.json({
-            name: "abc",
-            email: "abc@sa.com",
-            cell: "637263872",
-            mls: "sasa",
-            officeName: "sasa"
+            status: "ok"
         });
     })
 });
@@ -48,11 +44,18 @@ router.post('/saveAssociation', function(req, res, next) {
         var data =setUpsertObj(req.body)
         db.collection('associationDB').update({"association_name": data["association_name"]},data,{ "upsert": true });
         res.json({
-            name: "abc",
-            email: "abc@sa.com",
-            cell: "637263872",
-            mls: "sasa",
-            officeName: "sasa"
+            status: "ok"
+        });
+    })
+});
+
+router.post('/saveOfficeDetails', function(req, res, next) {
+    MongoClient.connect(dbHost, function(err, db) {
+        if (err) throw err
+        var data =setUpsertObj(req.body)
+        db.collection('employeeDB').update({"emp_lic_number": data["emp_lic_number"]},data,{ "upsert": true });
+        res.json({
+            status: "ok"
         });
     })
 });
