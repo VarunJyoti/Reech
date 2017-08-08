@@ -5,14 +5,14 @@ $(document).ready(function() {
     });
 
     $.uploadPreview({
-        input_field: "#image-upload",   // Default: .image-upload
-        preview_box: "#image-preview",  // Default: .image-preview
-        label_field: "#image-label",    // Default: .image-label
-        label_default: "Choose File",   // Default: Choose File
-        label_selected: "Change File",  // Default: Change File
-        no_label: false                 // Default: false
+        input_field: "#image-upload", // Default: .image-upload
+        preview_box: "#image-preview", // Default: .image-preview
+        label_field: "#image-label", // Default: .image-label
+        label_default: "Choose File", // Default: Choose File
+        label_selected: "Change File", // Default: Change File
+        no_label: false // Default: false
     });
-    
+
     function getParameterByName(name, url) {
         if (!url) url = window.location.href;
         name = name.replace(/[\[\]]/g, "\\$&");
@@ -35,7 +35,7 @@ $(document).ready(function() {
     function mapValues(obj) {
         for (var prop in obj) {
             var prop1 = prop.replace(/\s/g, "");
-            if(vm[prop1]){
+            if (vm[prop1]) {
                 vm[prop1](obj[prop]);
             }
             if (vm[prop1 + "Present"]) {
@@ -45,11 +45,15 @@ $(document).ready(function() {
     }
 
     var states = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('association_name'),
+        datumTokenizer: function(datum) {
+            return Bloodhound.tokenizers.whitespace(datum.association_name);
+        },
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        prefetch: '/mls'
+        remote: {
+            wildcard: '%QUERY',
+            url: '/mls?query=%QUERY'
+        }
     });
-
 
     $('#bloodhound .typeahead').typeahead({
         hint: true,
@@ -59,14 +63,26 @@ $(document).ready(function() {
         displayKey: 'association_name',
         source: states
     });
-    /* $('#bloodhound1 .typeahead').typeahead({
+
+    var offices = new Bloodhound({
+        datumTokenizer: function(datum) {
+            return Bloodhound.tokenizers.whitespace(datum.empl_name);
+        },
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        remote: {
+            wildcard: '%QUERY',
+            url: '/officeName?query=%QUERY'
+        }
+    });
+    $('#bloodhound1 .typeahead').typeahead({
         hint: true,
         highlight: true,
         minLength: 1
     }, {
-        name: 'states',
-        source: states
-    });*/
+        display: 'empl_name',
+        source: offices
+    });
+
 
     function viewModel() {
         var runningData = null;
@@ -98,6 +114,7 @@ $(document).ready(function() {
         };
         return model;
     }
+
 
     function saveAssociation(m, e) {
         var data = {}

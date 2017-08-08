@@ -72,20 +72,29 @@ function setUpsertObj(obj) {
 }
 
 router.get('/mls', function(req, res, next) {
+	var query  = req.query.query;
 	var ref = db.ref('associationDB');
 	var arr = []
     ref.on("value", function(s) {
-        res.json(snapshotToArray(s));
+        res.json(snapshotToArray(s, query, "association_name"));
     });
 });
-function snapshotToArray(snapshot) {
+router.get('/officeName', function(req, res, next) {
+	var query  = req.query.query;
+	var ref = db.ref('employeeDB');
+	var arr = [];
+    ref.on("value", function(s) {
+        res.json(snapshotToArray(s, query, "empl_name"));
+    });
+});
+function snapshotToArray(snapshot, filter, param) {
     var returnArr = [];
-
     snapshot.forEach(function(childSnapshot) {
         var item = childSnapshot.val();
         item.key = childSnapshot.key;
-
-        returnArr.push(item);
+        if(item[param].toLowerCase().indexOf(filter.toLowerCase()) > -1){
+        	returnArr.push(item);
+        }
     });
 
     return returnArr;
