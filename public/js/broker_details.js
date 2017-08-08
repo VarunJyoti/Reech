@@ -92,7 +92,6 @@ $(document).ready(function() {
             ZipPresent: ko.observable(false),
             empl_namePresent: ko.observable(false),
             brokerEmailPresent: ko.observable(false),
-            association_name:ko.observable(""),
             makeEditable: makeEditable,
             saveAssociation:saveAssociation,
             saveOfficeDetails:saveOfficeDetails
@@ -102,7 +101,7 @@ $(document).ready(function() {
 
     function saveAssociation(m, e) {
         var data = {}
-        data["association_name"] = m.association_name().replace(/\s/g, "");
+        data["mls"] = m.mls().replace(/\s/g, "");
         ajaxCall("/saveAssociation", "POST",
             function () {_hideModel("myModal");},
             function() {alert("failure");},
