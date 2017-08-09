@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "reechappweb-bc8bd",
+  "private_key_id": "2f00c1d23b240e2cc99b61a7ed69ad6fdb69aaca",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDMnwcw9RvZdVgx\n++VebjaebZPvm9TTOJfSGYO6HmHvXUGxOgGDwwJAs26MdlvX8l65ntyQPDU8k72A\nsEZ7wrC0HhhcsSejf+C7MyU6HKwJ07mDfPiAGBrX/Kr4W5HEOF9zDOCFOeeXFFwO\nKjgJNAScYmv4V/42IWT1biv/CFms+fXx7cN6kGbJFmQuG70dUr8/TAfFNLxRAhSC\nlh2+fMzcpHVfa6sMqAmDmNaxml52LdAihrOMsov9fmbzvFu3PNbKI6JKbalku1S4\nNRLNW8VwKyhFhPfrE4oihjx2uBrvIsrDq6EHi8aPSlCAnUnE47oJ+7raGeRDubvW\nmAnZW1BbAgMBAAECggEADG4arzrXOsIPSKtfLHnbKoud4X/gvAYOPvlFexsZDZk8\n14nJCW/hZVHLxOT0a61cW2qkRm90jR4CdIdWI3LZGM/9NeBId/0EMgsHghIM0g9W\nZSpEeZo9Qzf6S4UF2VrSqDgKND2nbRI+YgPm4d7oQCHAd6vMvw1knH4uq7BJAPdr\nI6ZWtXDpZXiHOn8fwcDRzfWQvd1GFpwpOyfkDWMQVMztBBU8chADRlRxiK/O5w9F\nQ6hOfiDp66R1jCdzME4CTom6GCLFWXauPeN64q8mTdhslth0a/UutBT8Z4MbEB80\npoInXD1Vl0ifh22Ge/TsdeuPhETReitST8vz3ihYUQKBgQDm55+bPP47lFLWQxzy\n+oKsDyiM1DRJqikvtfTZQ1jYhHuIpuRCGRujaKgzgO0iUPaaOO65yAqOAFOx3z5I\nh4zVshvvTL2l7fHL2cSymcS8fdU9ReL1hc3A4UpqVsmRHN2Tu3jQ8m4tc3FegVfG\nT8NfsnEToPOyj9tSCXShHqkKawKBgQDi3CBqNTbvAT2kSzDi9vmOpyDlLJEJIK9X\ny4+lWJH74GPhdOB/5iId6gCVJG/qoPHJIKdYVxyc3eFsEVTCg0dzl7Y1V2uFdVlm\nG9rzYUZbb8lNgPbccO/VzFyosUQe2Y0sdj5qzUFneF2HOBnYzJWEkRdaCesw9sRv\nqq0tis8t0QKBgARSs9dJNg1RgpeGXCVkcUvdYMn6Mxxp9ilxg6sJqsErAdEWJtHh\n/HV7wSJtuILa9zL9++I4j5IHCYob/uOGvilGE2XQjwBrSwqhAiDB5kANLw/dnhkw\nryB8V1NUWqO/4ZoheWqYD14EekvlqgoJdkP1aE6Qxd9C+D059hgKJeoPAoGAGgcF\nVQob7lnnF5Vk23VYdmxoUsLFNRXh6CG7rk22Gf7JltFQ/HuLyIDTZkkS6gljFB9B\n89myt7ChL0PhxJtJNFLgncgU1u/6vMNPYIL1joIJx3GXYP04FwBmVRhZZ2ywTLyY\nNqqr6VIe8OeX147JTLdUxYjDyg9VxDYBvmrhkDECgYAXsNTplC9MvNuUnZMkdBvu\nuwlctYnsC56yWEM1ZBhX3jkh3BO7aA4ewDpe804f+MpdmpDesaqgg+T/3iHegIo/\nlmNAM7xKhpxhLVoReElvykssn2tPvbeD8W5ayihcGaxNZTBNeJx5R+fAAetyT2Di\nGF+BG2fXoSPe3373zpxDXw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-olj3a@reechappweb-bc8bd.iam.gserviceaccount.com",
+  "client_id": "117905586258369372135",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-olj3a%40reechappweb-bc8bd.iam.gserviceaccount.com"
+}

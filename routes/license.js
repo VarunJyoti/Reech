@@ -6,11 +6,15 @@ const serviceAccount = require("../serviceAccount.json");
 const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
 const dbHost = 'mongodb://localhost:27017/reech';
-
+const reechWebAccount = require("../reechappweb.json");
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://agent-chat-1e26e.firebaseio.com"
 });
+var secondary = admin.initializeApp({
+    credential: admin.credential.cert(reechWebAccount),
+    databaseURL: "https://reechappweb-bc8bd.firebaseio.com"
+}, "secondary");
 
 const db = admin.database();
 
@@ -28,14 +32,9 @@ router.get('/license/:id', function(req, res, next) {
 });
 
 router.post('/saveLicenseDetails', upload.single('sampleFile'), function(req, res, next) {
-    MongoClient.connect(dbHost, function(err, db) {
-        if (err) throw err
-        var data =setUpsertObj(req.body)
-        db.collection('agentDB').update({"licenseNumber": data["licenseNumber"]},data,{ "upsert": true });
-        res.json({
-            status: "ok"
-        });
-    })
+    var license = req.body;
+    var ref = secondary.database().ref("agentDB");
+    ref.update(license);
 });
 
 router.post('/saveAssociation', function(req, res, next) {
