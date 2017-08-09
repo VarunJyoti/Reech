@@ -71,7 +71,7 @@
                                                                                data-bind="click: makeEditable"><i
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input name="lastName" maxlength="50" data-bind="value: LastName, visible: !LastNamePresent()" type="text"
+                                    <input name="agt_lastname" maxlength="50" data-bind="value: LastName, visible: !LastNamePresent()" type="text"
                                            class="form-control" placeholder="Last Name">
                                 </div>
                             </div>
@@ -83,7 +83,7 @@
                                                                                 data-bind="click: makeEditable"><i
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input name="email" maxlength="50" data-bind="value: PriEmail, visible: !PriEmailPresent()" type="text"
+                                    <input name="agt_email" maxlength="50" data-bind="value: PriEmail, visible: !PriEmailPresent()" type="text"
                                            class="form-control" placeholder="Email">
                                 </div>
                             </div>
@@ -95,7 +95,7 @@
                                                                                data-bind="click: makeEditable"><i
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input name="cell" maxlength="12" data-bind="value: PriPhone, visible: !PriPhonePresent()" type="text"
+                                    <input name="agt_cell" maxlength="12" data-bind="value: PriPhone, visible: !PriPhonePresent()" type="text"
                                            class="form-control" placeholder="Cell">
                                 </div>
                             </div>
@@ -108,7 +108,7 @@
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
                                     <div id="bloodhound" data-bind="visible: !mlsPresent()">
-                                        <input name="mls" maxlength="50" data-bind="value: mls" class="form-control typeahead tt-input"
+                                        <input name="association" maxlength="50" data-bind="value: mls" class="form-control typeahead tt-input"
                                                type="text" placeholder="Association">
                                         <button type="button" class="btn btn-primary btn-xs" data-toggle="modal"
                                                 data-target="#myModal">Add new
@@ -150,7 +150,7 @@
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
                                     <div id="bloodhound1" data-bind="visible: !OfficeNamePresent()">
-                                        <input name="officeName" maxlength="50" data-bind="value: OfficeName" class="form-control typeahead tt-input"
+                                        <input name="office_name" maxlength="50" data-bind="value: OfficeName" class="form-control typeahead tt-input"
                                                type="text" placeholder="Office Name">
                                         <button type="button" class="btn btn-primary btn-xs" data-toggle="modal"
                                                 data-target="#myModal1">Add new
@@ -203,7 +203,7 @@
                                                                                       href="#" data-bind="click: makeEditable"><i
                                             class="paddingLeft glyphicon glyphicon-edit"></i></a>
                                     </p>
-                                    <input name="brokerEmail" maxlength="50" data-bind="value: brokerEmail, visible: !brokerEmailPresent()" type="email"
+                                    <input name="emp_email" maxlength="50" data-bind="value: brokerEmail, visible: !brokerEmailPresent()" type="email"
                                            class="form-control" placeholder="Broker Email">
                                 </div>
                             </div>

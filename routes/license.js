@@ -17,24 +17,54 @@ var secondary = admin.initializeApp({
 }, "secondary");
 
 const db = admin.database();
-
+var dbKey = null;
 /* GET home page. */
+const map = {
+	"agt_firstname": "FirstName",
+	"agt_lastname": "LastName",
+	"association": "mls",
+	"agt_email":"PriEmail",
+	"agt_cell":"PriPhone",
+	"office_name": "OfficeName",
+	"zip_code": "Zip",
+	"emp_email":"brokerEmail"
+}
+
 router.get('/license/:id', function(req, res, next) {
     var license = req.params.id || "";
     var ref = db.ref('agentDB').orderByChild("lic_number").equalTo(license);
 
     ref.on("value", function(s) {
         var obj = s.val();
-        for (var prop in obj) {
-            res.json(obj[prop]);
+        var resObj = {};
+        for (var objkey in obj) {
+        	dbKey = objkey;
+        	dbObj = obj[objkey]
+        	for (var prop in dbObj) {
+ 				var x = map[prop]
+            	if(x)
+            	{
+            		resObj[x]= dbObj[prop]
+            	} else
+            	{
+            		resObj[prop] = dbObj[prop]
+            	};
+        	}
         }
+        res.json(resObj)
     });
 });
 
 router.post('/saveLicenseDetails', upload.single('sampleFile'), function(req, res, next) {
     var license = req.body;
     var ref = secondary.database().ref("agentDB");
-    ref.update(license);
+	var updates = {};
+	updates['/'+dbKey] = license;   
+	return ref.update(updates).then(function(){
+		res.json({
+            status: "ok"
+        })
+	});
 });
 
 router.post('/saveAssociation', function(req, res, next) {
