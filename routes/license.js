@@ -59,12 +59,17 @@ router.post('/saveLicenseDetails', upload.single('sampleFile'), function(req, re
     var license = req.body;
     var ref = secondary.database().ref("agentDB");
 	var updates = {};
-	updates['/'+dbKey] = license;   
-	return ref.update(updates).then(function(){
-		res.json({
-            status: "ok"
-        })
-	});
+	if(dbKey != null){
+		updates['/'+dbKey] = license; 
+		return ref.update(updates).then(function(){
+			res.json({
+	            status: "ok"
+	        })
+		});
+	}else{
+		ref.push(license);
+	}
+	
 });
 
 router.post('/saveAssociation', function(req, res, next) {
