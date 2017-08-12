@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const MongoClient = require('mongodb').MongoClient;
 const admin = require('firebase-admin');
 const serviceAccount = require("../serviceAccount.json");
 const multer = require('multer')
@@ -73,25 +72,27 @@ router.post('/saveLicenseDetails', upload.single('sampleFile'), function(req, re
 });
 
 router.post('/saveAssociation', function(req, res, next) {
-    MongoClient.connect(dbHost, function(err, db) {
-        if (err) throw err
-        var data =setUpsertObj(req.body)
-        db.collection('associationDB').update({"association_name": data["association_name"]},data,{ "upsert": true });
-        res.json({
-            status: "ok"
-        });
-    })
+    var data = req.body;
+    var ref = secondary.database().ref("associationDB");
+    ref.push(data).then(function(){
+        res.json({status: "ok"})
+    });
 });
 
 router.post('/saveOfficeDetails', function(req, res, next) {
-    MongoClient.connect(dbHost, function(err, db) {
+   /*MongoClient.connect(dbHost, function(err, db) {
         if (err) throw err
         var data =setUpsertObj(req.body)
         db.collection('employeeDB').update({"emp_lic_number": data["emp_lic_number"]},data,{ "upsert": true });
         res.json({
             status: "ok"
         });
-    })
+    })*/
+    var data = req.body;
+    var ref = secondary.database().ref("employeeDB");
+    ref.push(data).then(function(){
+        res.json({status: "ok"})
+    });
 });
 
 function setUpsertObj(obj) {
@@ -108,7 +109,6 @@ function setUpsertObj(obj) {
 router.get('/mls', function(req, res, next) {
 	var query  = req.query.query;
 	var ref = db.ref('associationDB');
-	var arr = []
     ref.on("value", function(s) {
         res.json(snapshotToArray(s, query, "association_name"));
     });

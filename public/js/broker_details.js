@@ -85,7 +85,14 @@ $(document).ready(function() {
 
 
     function viewModel() {
-        var runningData = null;
+        var brokerage = {
+            empl_name: ko.observable(""),
+            emp_lic_number: ko.observable(""),
+            brokerEmail: ko.observable(""),
+            Zip: ko.observable(""),
+            OfficeName: ko.observable("")
+        }
+
         var model = {
             licenseNumber: ko.observable(getParameterByName("license")),
             FirstName: ko.observable(""),
@@ -109,6 +116,7 @@ $(document).ready(function() {
             empl_namePresent: ko.observable(false),
             brokerEmailPresent: ko.observable(false),
             association_name:ko.observable(""),
+            brokerage:brokerage,
             makeEditable: makeEditable,
             saveAssociation:saveAssociation,
             saveOfficeDetails:saveOfficeDetails
@@ -121,22 +129,40 @@ $(document).ready(function() {
         var data = {}
         data["association_name"] = m.association_name().replace(/\s/g, "");
         ajaxCall("/saveAssociation", "POST",
-            function () {_hideModel("myModal");},
-            function() {alert("failure");},
+            function (res) {
+                _hideModel("myModal");
+                if (res.status == "ok") {
+                    m.mls(m.association_name());
+                    m.association_name("");
+                }
+            },
+            serverBusy,
             data);
     }
 
     function saveOfficeDetails(m, e) {
         var data = {}
-        data["emp_lic_number"] = m.emp_lic_number().replace(/\s/g, "");
-        data["empl_name"] = m.empl_name().replace(/\s/g, "");
+        data["emp_lic_number"] = m.brokerage.emp_lic_number().replace(/\s/g, "");
+        data["empl_name"] = m.brokerage.empl_name().replace(/\s/g, "");
         ajaxCall("/saveOfficeDetails",
             "POST",
-            function(){_hideModel("myModal1");},
-            function(){alert("failure");},
+            function (res) {
+                _hideModel("myModal1");
+                if (res.status == "ok") {
+                    copyAddedOfficeDetails(m);
+                }
+            },
+            serverBusy,
             data);
     }
 
+    function copyAddedOfficeDetails(m) {
+        for (var prop in m.brokerage) {
+            m[prop](m.brokerage[prop]());
+            m.brokerage[prop]("")
+        }
+    }
+    
     function _hideModel(modalId) {
         $('#' + modalId).modal('toggle');
     }
