@@ -4,6 +4,10 @@ $(document).ready(function() {
         alert("Thank you for your comment!");
     });
 
+    $('#myModal1,#myModal').on('hidden.bs.modal', function () {
+        $(this).find("input").val('').end();
+    });
+
     $.uploadPreview({
         input_field: "#image-upload", // Default: .image-upload
         preview_box: "#image-preview", // Default: .image-preview
@@ -147,9 +151,9 @@ $(document).ready(function() {
         ajaxCall("/saveOfficeDetails",
             "POST",
             function (res) {
-                _hideModel("myModal1");
                 if (res.status == "ok") {
                     copyAddedOfficeDetails(m);
+                    _hideModel("myModal1");
                 }
             },
             serverBusy,
@@ -159,10 +163,9 @@ $(document).ready(function() {
     function copyAddedOfficeDetails(m) {
         for (var prop in m.brokerage) {
             m[prop](m.brokerage[prop]());
-            m.brokerage[prop]("")
         }
     }
-    
+
     function _hideModel(modalId) {
         $('#' + modalId).modal('toggle');
     }
