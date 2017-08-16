@@ -3,8 +3,9 @@ $(document).ready(function() {
     $('#fullpage').fullpage({
         slideSelector: '.fullslide',
         verticalCentered: false,
-        scrollOverflow: true,
-        scrollBar: false
+        //scrollOverflow: true,
+        //scrollBar: false,
+        autroScrolling:false
     });
 
     function viewModel() {

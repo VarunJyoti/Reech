@@ -123,12 +123,15 @@ $(document).ready(function() {
             brokerage:brokerage,
             makeEditable: makeEditable,
             saveAssociation:saveAssociation,
-            saveOfficeDetails:saveOfficeDetails
+            saveOfficeDetails:saveOfficeDetails,
+            goBack:goBack
         };
         return model;
     }
 
-
+    function goBack(){
+        window.location = document.referrer;
+    }
     function saveAssociation(m, e) {
         var data = {}
         data["association_name"] = m.association_name().replace(/\s/g, "");

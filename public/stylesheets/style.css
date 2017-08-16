@@ -21,15 +21,8 @@ input {
     font-size: 4vw;
     color:#0095ff;
     font-weight: bold;
-    margin-top: 2%;
-}
-
-.at{
-
-    Border-radius:3px;
-    padding:0% 1% 1% 1%;
-    background-color: #000;
-    color: #fff;
+    margin-top: 5%;
+    margin-left: -35px;
 }
 
 input::-webkit-input-placeholder {
