@@ -5,7 +5,7 @@ $(document).ready(function() {
         verticalCentered: false,
         //scrollOverflow: true,
         //scrollBar: false,
-        autroScrolling:false
+        autoScrolling:false
     });
 
     function viewModel() {
