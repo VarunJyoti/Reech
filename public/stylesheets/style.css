@@ -45,9 +45,11 @@ input:-ms-input-placeholder {
     float: none;
     margin: 0 auto;
 }
-
+.phoneImg img{
+    height: 450px;
+}
 @media screen and (max-width: 763px) {
-    .phoneImage img{
+    .phoneImg img{
         height: 250px!important;
         margin-top: 8%;
     }
@@ -59,6 +61,8 @@ input:-ms-input-placeholder {
         margin-top: 8%;
     }
 
-
+    .phoneImg img{
+        height: 250px!important; 
+    }
     .col-sm-8 h3{margin-top: 2%;text-align: center;}
 }
