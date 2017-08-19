@@ -22,9 +22,12 @@ input {
     font-size: 1vw;
     padding-bottom: 3%;
     text-align: left;
+    font-weight: bold;
 }
 
-.img-responsive{max-width: 80%;}
+.logo.img-responsive {
+    max-width: 80%;
+}
 
 .title {
     font-size: 2.5vw;
@@ -49,9 +52,31 @@ input {
     text-align: center;
 }
 
+.footerHeader {
+    background-color: #0f0f0f;
+    color: #ffffff;
+    font-size: 2vw;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.footerContents{
+    background-color: #0f0f0f;
+    font-size: 1.5vw;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: #ffffff;
+}
+
+.footerContents a{
+    color: #ffffff;
+}
+
 @media screen and (max-width: 420px){
     .reechappavailable {
         font-size: 3vw;
+        font-weight: normal;
     }
     .title {
         margin-left: -45px;
@@ -65,12 +90,20 @@ input {
     .howitworks a{
         font-size: 3vw;
     }
+
     .playstore {
         margin-top: 5px;
     }
-    .playstore img{
-        margin-top: 10px;    }
 
+    .playstore img {
+        margin-top: 10px;
+    }
+    .footerHeader {
+        font-size: 3vw;
+    }
+    .footerContents{
+        font-size: 2.5vw;
+    }
 }
 
 input::-webkit-input-placeholder {
@@ -124,4 +157,56 @@ input:-ms-input-placeholder {
 }
 .bottomBar {
     font-size: 2vw; text-align: center;
+}
+
+.aboutreechHeading{
+    font-size: 1.5vw;
+    text-align: center;
+    font-weight: bold;
+}
+
+.aboutreechTitleText{
+    font-size: 2vw;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.reechforRealEstateHeading{
+    font-size: 2vw;
+    text-align: center;
+    color: #0095ff;
+    padding-top: 20px;
+}
+
+.reechforRealEstateHeading1{
+    text-align: center;
+    font-size: 1.5vw;
+    padding-top: 20px;
+}
+.reechforRealEstateHeading2{
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+@media screen and (max-width: 420px){
+    .aboutreechHeading{
+        font-size: 4vw;
+    }
+
+    .aboutreechText{
+        font-size: 4vw;
+    }
+    .aboutreechTitleText{
+        font-size: 4vw;
+    }
+
+    .reechforRealEstateHeading{
+        font-size: 4vw;
+    }
+
+    .reechforRealEstateHeading1{
+        font-size: 3.5vw;
+        padding-top: 10px;
+    }
 }
