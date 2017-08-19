@@ -29,6 +29,12 @@
     <script type="text/javascript" src="js/knockout-3.4.1.js"></script>
     <script type="text/javascript" src="js/status_app.js"></script>
     <script type="text/javascript" src="./stylesheets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#includedContent").load("footer.html");
+        });
+    </script>
 </head>
 
 <body id="root">
@@ -222,37 +228,7 @@
         </div>
     </div>
     <div class="section" id="section4">
-        <div class="container">
-            <div class="row footerHeader">
-                <div class="col-sm-1 "></div>
-                <div class="col-sm-4 col-xs-4">Resources</div>
-                <div class="col-sm-3 col-xs-4">Company</div>
-                <div class="col-sm-3 col-xs-4">Help spread Reech
-                </div>
-            </div>
-            <div class="row footerContents">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-4 col-xs-4">Help</div>
-                <div class="col-sm-3 col-xs-4"><a href="aboutReech.html">About Us</a></div>
-                <div class="col-sm-3 col-xs-4">Reech@Facebook</div>
-            </div>
-            <div class="row footerContents">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-4 col-xs-4">How to’s ?</div>
-                <div class="col-sm-3 col-xs-4">jobs</div>
-                <div class="col-sm-3 col-xs-4">Your Feedback</div>
-            </div>
-            <div class="row footerContents">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-4 col-xs-4">Agent’s benefits</div>
-                <div class="col-sm-3 col-xs-4">Privacy Policy</div>
-                <div class="col-sm-3 col-xs-4">Contact us</div>
-            </div>
-            <div class="row footerContents">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-4 col-xs-4">Broker’s benefits</div>
-                <div class="col-sm-4 col-xs-4">Terms & Conditions</div>
-            </div>
+        <div class="container" id="includedContent">
         </div>
     </div>
 </div>
