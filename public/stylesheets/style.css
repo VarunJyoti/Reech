@@ -114,3 +114,13 @@ input:-ms-input-placeholder {
     }
     .col-sm-8 h3{margin-top: 2%;text-align: center;}
 }
+.topBar {
+    background-color: #564a4a;
+    font-size: 3vw;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.bottomBar {
+    font-size: 2vw; text-align: center;
+}

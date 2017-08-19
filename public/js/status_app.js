@@ -1,7 +1,7 @@
 $(document).ready(function() {
      
     $('#fullpage').fullpage({
-        slideSelector: '.fullslide',
+        //slideSelector: '.fullslide',
         verticalCentered: false,
         //scrollOverflow: true,
         //scrollBar: false,
