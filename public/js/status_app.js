@@ -1,10 +1,7 @@
 $(document).ready(function() {
      
     $('#fullpage').fullpage({
-        //slideSelector: '.fullslide',
         verticalCentered: false,
-        //scrollOverflow: true,
-        //scrollBar: false,
         autoScrolling:false
     });
 

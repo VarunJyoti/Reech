@@ -1,8 +1,16 @@
+
 body {
-    padding: 0px;
-    Margin: 0px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-family: "Lucida Grande";
+  @media (min-width: 800px) {
+    font-size: 18px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 20px;
+  }
 }
+
 .panel-default>.panel-heading {
 	background-color: #337ab7!important;
 	color: white!important;
@@ -13,24 +21,21 @@ input {
 }
 
 .introText {
-    font-size: 4vw;
+    ////font-size: 4vw;
     padding-top: 2% ;
     padding-bottom: 2%;
 }
 
 .reechappavailable {
-    font-size: 1vw;
+    ////font-size: 1vw;
     padding-bottom: 3%;
     text-align: left;
     font-weight: bold;
 }
 
-.logo.img-responsive {
-    max-width: 80%;
-}
 
 .title {
-    font-size: 2.5vw;
+    ////font-size: 2.5vw;
     color:#0095ff;
     font-weight: bold;
     margin-top: 3.5%;
@@ -44,12 +49,13 @@ input {
 }
 
 .howitworks a{
-    font-size: 1.0vw;
+    ////font-size: 1.0vw;
     color:#0095ff;
 }
 
 .playstore {
     text-align: center;
+    margin-top: -2%;
 }
 
 .footerHeader {
@@ -74,13 +80,20 @@ input {
 }
 
 @media screen and (max-width: 420px){
+    h2 {
+        font-size: 18px!important;
+    }
+    h3{
+        font-size: 16px!important;
+    }
+
     .reechappavailable {
-        font-size: 3vw;
+        //font-size: 3vw;
         font-weight: normal;
     }
     .title {
         margin-left: -45px;
-        font-size: 3.5vw;
+        //font-size: 3.5vw;
         margin-top: 8%;
     }
     .linksection{
@@ -88,7 +101,7 @@ input {
     }
 
     .howitworks a{
-        font-size: 3vw;
+        //font-size: 3vw;
     }
 
     .playstore {
@@ -150,13 +163,35 @@ input:-ms-input-placeholder {
 }
 .topBar {
     background-color: #564a4a;
-    font-size: 3vw;
+    //font-size: 20px;
     color: white;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 10px;
 }
 .bottomBar {
-    font-size: 2vw; text-align: center;
+    //font-size: 20px; 
+    text-align: center;
+}
+.image-text {
+    //font-size:  20px;
+    text-align: center;
+}
+img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+@media (max-width: 950px){
+    .section.fp-section,
+    .section .fp-tableCell{
+        height: auto !important;
+        min-height: 100%;
+    }
+}
+
+.orgName {
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 .aboutreechHeading{
