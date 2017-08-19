@@ -29,6 +29,11 @@
     <script type="text/javascript" src="js/knockout-3.4.1.js"></script>
     <script type="text/javascript" src="js/status_app.js"></script>
     <script type="text/javascript" src="./stylesheets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $("#includedContent").load("footer.html");
+        });
+    </script>
 </head>
 
 <body id="root">
@@ -142,8 +147,16 @@
                 Messaging has better Open and Response rates <br>than email, call and voice mail combined. 
                 </div>
             </div>
-         </div>   
-
+         </div>
+    </div>
+    <div class="section" id="section2">
+        <div class="container">
+            3 images section
+        </div>
+    </div>
+    <div class="section" id="section3">
+        <div class="container" id="includedContent">
+        </div>
     </div>
 </div>
 </body>
