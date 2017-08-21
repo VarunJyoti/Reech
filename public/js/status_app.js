@@ -8,7 +8,7 @@ $(document).ready(function() {
     function viewModel() {
         var runningData = null;
         var model = {
-            licenseNumber: ko.observable(),
+            licenseNumber: ko.observable(""),
             getLicenseClick: getLicenseClick.bind(model)
         };
     

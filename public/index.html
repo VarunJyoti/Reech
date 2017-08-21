@@ -76,15 +76,24 @@
 
                     <div class="row">
                         <div class="col-sm-5">
-                            <input style="font-size:20px;" type="text" data-bind="value:licenseNumber"
+                            <input style="font-size:20px;" type="text" data-bind="value:licenseNumber, valueUpdate:'keyup'"
                                    class="text-left input-sm form-control"
                                    placeholder="Enter your License Number" maxlength="15"/>
                         </div>
                         <div class="col-sm-2" style="text-align: center">
-                            <button data-bind="click:getLicenseClick" class="btn btn-primary search-btn"
+                            <button data-bind="disable: licenseNumber()=='', click:getLicenseClick " class="btn btn-primary search-btn"
                                     style="margin-top:3%;">
                                 Get Started
                             </button>
+                        </div>
+                    </div>
+
+                    <div class="row playstore desk">
+                        <div class="col-sm-4">
+                            <a href="#"><img class="img-responsive col-centered" src="images/googlePay.png" alt=""></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#"><img class="img-responsive col-centered" src="images/appStore.png" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -97,7 +106,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row playstore">
+            <div class="row playstore mob">
                 <div class="col-sm-2 col-xs-6">
                     <a href="#"><img class="img-responsive col-centered" src="images/googlePay.png" alt=""></a>
                 </div>
@@ -149,8 +158,9 @@
                 </div>
             </div>
             <div class="row bottomBar">
-                <div class="col-sm-12">
-                <h3>Messaging has better Open and Response rates <br>than email, call and voice mail combined. </h3>
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                <h3>Messaging has better Open and Response rates than email, call and voice mail combined. </h3>
                 </div>
             </div>
          </div>
