@@ -32,6 +32,10 @@
                 autoScrolling:false
             });
             $("#includedContent").load("footer.html");
+            $('#myForm').ajaxForm(function() {
+                alert("Thank you for your comment!");
+            });
+
         });
 
 
@@ -48,7 +52,7 @@
                           </h1><a href="#">info@reechapp.com</a>
                       </div>
                       <div class="col-sm-6">
-                        <form class="contactus">
+                        <form id="myForm" action="/saveContactusDetails" method="post" class="contactus" onSubmit="alert('Thank you for your feedback.')">
                               <div class="form-group">
                                 <label for="license">License Number</label>
                                 <input type="text" name="license" class="form-control" id="license">
@@ -64,7 +68,6 @@
                               <div class="form-group">
                                 <textarea placeholder="Leave your comment" rows="5" name="comments" class="form-control"></textarea>
                               </div>
-                              
                               <button type="submit" class="btn btn-primary">Submit</button>
                           </form>
                       </div>

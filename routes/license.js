@@ -70,6 +70,15 @@ router.post('/saveLicenseDetails', upload.single('sampleFile'), function(req, re
 	}
 	
 });
+router.post('/saveContactusDetails', function(req, res, next) {
+    debugger
+    var contact = req.body;
+    var ref = secondary.database().ref("contactDB");
+    ref.push(contact);
+    
+});
+
+
 
 router.post('/saveAssociation', function(req, res, next) {
     var data = req.body;
