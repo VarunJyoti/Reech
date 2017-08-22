@@ -26,14 +26,12 @@
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/overflow.js"></script>
     <script type="text/javascript" src="js/fullPage.js"></script>
+    <script type="text/javascript" src="js/knockout-3.4.1.js"></script>
+    <script type="text/javascript" src="js/status_app.js"></script>
     <script type="text/javascript" src="./stylesheets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 
     <script>
         $(function () {
-            $('#fullpage').fullpage({
-        verticalCentered: false,
-        autoScrolling:false
-    });
             $("#includedContent").load("footer.html");
         });
 
@@ -209,11 +207,11 @@
                 <div class="col-sm-3"></div>
                 <div class="col-sm-4">
                     <input style="font-size:20px;" type="text"
-                           class="text-left input-sm form-control"
+                           class="text-left input-sm form-control" data-bind="value:licenseNumber, valueUpdate:'keyup'"
                            placeholder="Enter your License Number" maxlength="15"/>
                 </div>
                 <div class="col-sm-2">
-                    <input style="font-size:20px;" type="text"
+                    <input style="font-size:20px;" type="text" data-bind="value:state"
                            class="text-left input-sm form-control"
                            placeholder="State" maxlength="15"/>
                 </div>
@@ -221,7 +219,7 @@
             <div class="row">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4" style="text-align: center">
-                    <button class="btn btn-primary btn-block"
+                    <button class="btn btn-primary btn-block" data-bind="disable: licenseNumber()=='', click:getLicenseClick "
                             style="margin-top:5%;">
                         Get Started
                     </button>

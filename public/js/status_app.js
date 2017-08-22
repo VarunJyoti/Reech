@@ -9,6 +9,7 @@ $(document).ready(function() {
         var runningData = null;
         var model = {
             licenseNumber: ko.observable(""),
+            state: ko.observable(""),
             getLicenseClick: getLicenseClick.bind(model)
         };
     
@@ -19,8 +20,13 @@ $(document).ready(function() {
         alert("Server too busy. Please try after some time.");
         $("#overlay").hide();
     }
-    function getLicenseClick(e, h){
-        window.location += "details.html?license="+vm.licenseNumber();
+
+    function getLicenseClick(e, h) {
+        var queryString = "license=" + vm.licenseNumber();
+        if (vm.state().replace(/\s/g, "") != "") {
+            queryString += "&state=" + vm.state().replace(/\s/g, "");
+        }
+        window.location.href= window.location.origin+ "/details.html?" + queryString;
     }
     function ajaxCall(url, success, failure) {
         $.ajax({

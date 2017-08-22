@@ -31,6 +31,7 @@ const map = {
 
 router.get('/license/:id', function(req, res, next) {
     var license = req.params.id || "";
+    var state = req.query.state || "";
     var ref = db.ref('agentDB').orderByChild("lic_number").equalTo(license);
 
     ref.on("value", function(s) {
@@ -89,14 +90,6 @@ router.post('/saveAssociation', function(req, res, next) {
 });
 
 router.post('/saveOfficeDetails', function(req, res, next) {
-   /*MongoClient.connect(dbHost, function(err, db) {
-        if (err) throw err
-        var data =setUpsertObj(req.body)
-        db.collection('employeeDB').update({"emp_lic_number": data["emp_lic_number"]},data,{ "upsert": true });
-        res.json({
-            status: "ok"
-        });
-    })*/
     var data = req.body;
     var ref = secondary.database().ref("employeeDB");
     ref.push(data).then(function(){

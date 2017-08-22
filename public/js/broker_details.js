@@ -27,9 +27,12 @@ $(document).ready(function() {
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
     const license = getParameterByName("license");
+    const state = {"state": getParameterByName("state")||""};
+
 
     $.ajax({
         url: "/license/" + license,
+        data: state,
         method: "GET",
         success: function(res) {
             mapValues(res);
