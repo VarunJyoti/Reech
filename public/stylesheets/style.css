@@ -12,26 +12,55 @@ body {
     body{
         font-size: 18px;
     }
-
 }
 
 h1{
+   font-size: 25px;
+}
+h2{
    font-size: 20px;
 }
+h3{
+   font-size: 16px;
+}
+h4{
+   font-size: 12px;
+}
+
 @media screen and (min-width: 800px) {
     h1{
+        font-size: 30px;
+    }
+    h2{
         font-size: 25px;
-    }  
+    } 
+    h3{
+        font-size: 22px;
+    }
+    h4{
+        font-size: 18px;
+    }
  }
 @media (min-width: 1200px) {
     h1{
+        font-size: 48px;
+    }
+    h2{
         font-size: 36px;
+    }
+    h3{
+        font-size: 28px;
+    }
+    h4{
+        font-size: 20px;
     }
 }
 
+
+
 .panel-default>.panel-heading {
 	background-color: #337ab7!important;
-	color: white!important;
+	color: #FAFAFA!important;
 }
 
 input {
@@ -83,8 +112,8 @@ input {
 }
 
 .footerHeader {
-    background-color: #0f0f0f;
-    color: #ffffff;
+    background-color: #404040;
+    color: #FAFAFA;
     font-size: 2vw;
     margin-top: 20px;
     padding-top: 20px;
@@ -92,21 +121,18 @@ input {
 }
 
 .footerContents{
-    background-color: #0f0f0f;
+    background-color: #404040;
     font-size: 1.5vw;
     padding-top: 2px;
     padding-bottom: 2px;
-    color: #ffffff;
+    color: #FAFAFA;
 }
 
 .footerContents a{
-    color: #ffffff;
+    color: #FAFAFA;
 }
 
 @media screen and (max-width: 420px){
-    h3{
-        font-size: 16px!important;
-    }
 
     .reechappavailable {
         //font-size: 3vw;
@@ -195,20 +221,25 @@ input:-ms-input-placeholder {
     }
     .col-sm-8 h3{margin-top: 2%;text-align: center;}
 }
+.whoweare{
+    height: 250px;
+}
 .topBar {
-    background-color: #564a4a;
+    background-color: #404040;
     //font-size: 20px;
-    color: white;
+    color: #FAFAFA;
     padding-top: 10px;
     padding-bottom: 10px;
-    opacity: 0.7;
+    margin-top: 20px;
+    text-align: center;
+   
 }
 .bottomBar {
     //font-size: 20px; 
     text-align: center;
 }
 .image-text {
-    //font-size:  20px;
+   margin-top: 20px;
     text-align: center;
 }
 img {
@@ -281,35 +312,46 @@ img {
     }
 }
 
-.top {
-     background: url("../images/Broker_benefits.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 500px;
-  position: relative;
+.top:before{
+    background-color: #FBFBFB;
+    background-image: url("../images/Broker_benefits.jpg");
+    background-position: center;
+    background-size: cover;
+    content: '';
+    display: block;
+    height: 500px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all .5s;
+    width: 100%;
+   // z-index: 1;
 }
-.top-agents {
-   background: url("../images/Agent_benefits.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 500px;
-  position: relative;
+.top-agents:before {
+    background-color: #FBFBFB;
+   background-image: url("../images/Agent_benefits.jpg"); 
+   background-position: center;
+    background-size: cover;
+    content: '';
+    display: block;
+    height: 500px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all .5s;
+    width: 100%;
 }
 .inner {
-  position: absolute;
-  bottom: 0;
+  //position: absolute;
+ // bottom: 0;
   background-color: #3a3aff;
   opacity: 0.8;
-  color: white;
+  color: #FAFAFA;
   text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
-  width: 100%;
   font-size: 20px;
+  margin-top: -38px;
 }
 
 ul {

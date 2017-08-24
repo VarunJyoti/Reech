@@ -1,10 +1,10 @@
 $(document).ready(function() {
      
-    $('#fullpage').fullpage({
+    /*$('#fullpage').fullpage({
         verticalCentered: false,
         autoScrolling:false
     });
-
+*/
     function viewModel() {
         var runningData = null;
         var model = {

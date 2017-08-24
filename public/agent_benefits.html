@@ -27,10 +27,10 @@
     <script type="text/javascript" src="js/fullPage.js"></script>
     <script>
         $(function () {
-            $('#fullpage').fullpage({
+            /*$('#fullpage').fullpage({
                 verticalCentered: false,
                 autoScrolling:false
-            });
+            });*/
             $("#includedContent").load("footer.html");
         });
 
@@ -41,8 +41,8 @@
 <body>
 <div id="fullpage">
     <div class="section">
-            <div class="container-fluid top-agents">
-                <div class="row">
+            <div class="container top-agents">
+                <div class="row top-inner" style="height: 500px;">
                     <div class="col-sm-7">
                         <div class="row">
                             <div class="col-sm-3 col-xs-6">
@@ -56,22 +56,25 @@
                                 <a href="#">HOW IT WORKS</a>
                             </div>
                             <div class="col-sm-6 col-xs-6 howitworks">
-                                <a href="#">ABOUT REECH</a>
+                                <a href="aboutReech.html">ABOUT REECH</a>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                
+            </div>
+            <div class="container-fluid">
                 <div class="row inner">
                     <div class="col-sm-12">
                         Reech App brings your office wherever you are…
                    </div>
                 </div>
-                
             </div>
             <div class="container">
-                <div class="row" style="font-size:20px; font-weight: bold; margin-top: 10px">
+                <div class="row" style="font-size:20px; font-weight: bold; margin-top: 20px">
                     <div class="col-sm-12">
-                     Benefits
+                     Agent Benefits
                    </div>
                 </div>
             </div>
@@ -80,7 +83,7 @@
     </div>
     <div class="section" id="section1">
         <div class="container">
-            <div class="row">
+            <div class="row" style="margin-top: 20px">
                 <div class="col-sm-12">
                     <ul>
                         <li>Any agent, anywhere regardless of MLS, Association or Brokerage</li>
