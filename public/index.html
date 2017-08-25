@@ -3,24 +3,24 @@
 
 <head>
     <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                        (i[r].q = i[r].q || []).push(arguments)
-                    }, i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-90716822-1', 'auto');
-        ga('send', 'pageview');
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-90716822-1', 'auto');
+    ga('send', 'pageview');
     </script>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap-3.3.7/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css"/>
-    <link rel="stylesheet" type="text/css" href="./stylesheets/fullPage.css"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap-3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="./stylesheets/fullPage.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Reech</title>
     <link rel="shortcut icon" href="./images/reech.ico" />
@@ -31,184 +31,181 @@
     <script type="text/javascript" src="js/status_app.js"></script>
     <script type="text/javascript" src="./stylesheets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script>
-        $(function () {
-            $("#includedContent").load("footer.html");
-        });
+    $(function() {
+        $("#includedContent").load("footer.html");
+    });
     </script>
 </head>
 
 <body id="root">
-<div id="fullpage">
-    <div class="section">
-        <div class="container">
-            <div class="row" style="margin-top: 20px;">
-                <div class="col-sm-7">
-                    <div class="row">
-
-                        <div class="col-sm-4 col-xs-8">
-                            <img class="img-responsive" src="images/reech_logo.png">
+    <div id="fullpage">
+        <div class="section" id="section1-home">
+            <div class="container">
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-sm-7">
+                        <div class="row">
+                            <div class="col-sm-4 col-xs-8">
+                                <a href="index.html"><img class="img-responsive" src="images/reech_logo.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="row linksection">
+                            <div class="col-sm-6 col-xs-6 howitworks">
+                                <a href="index.html">HOME</a>
+                            </div>
+                            <div class="col-sm-6 col-xs-6 howitworks">
+                                <a href="aboutReech.html">ABOUT REECH</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4">
-                    <div class="row linksection">
-                        <div class="col-sm-6 col-xs-6 howitworks">
-                            <a href="#">HOW IT WORKS</a>
+                <div class="row">
+                    <div class="col-sm-7">
+                        <div class="row">
+                            <div class="col-sm-10 introText" style="text-align: left;">
+                                <h1>Where<br>Real Estate Agents<br>connect and collaborate.</h1>
+                            </div>
                         </div>
-                        <div class="col-sm-6 col-xs-6 howitworks">
-                            <a href="aboutReech.html">ABOUT REECH</a>
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <div class="form-group">
+                                    <input style="font-size:16px;" type="text" data-bind="value:licenseNumber, valueUpdate:'keyup'" class="text-left input-sm form-control" placeholder="License Number" maxlength="15" />
+                                </div>
+                                <div class="form-group">
+                                    <input style="font-size:16px;" type="text" data-bind="value:state, valueUpdate:'keyup'" class="text-left input-sm form-control" placeholder="State" maxlength="15" />
+                                </div>
+                                <div class="form-group">
+                                    <button data-bind="disable: licenseNumber()=='' || state()=='', click:getLicenseClick" style="width: 100%; font-size:16px;" class="btn btn-primary">
+                                        Get Started
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-7">
-                    <div class="row">
-                        <div class="col-sm-10 introText" style="text-align: left;">
-                            <h1>Where<br>Real Estate Agents<br>connect and collaborate.</h1>
-                        </div>
-                    </div>
-                    
-
-                    <div class="row">
-                        <div class="col-sm-5">
-                            <input style="font-size:20px;" type="text" data-bind="value:licenseNumber, valueUpdate:'keyup'"
-                                   class="text-left input-sm form-control"
-                                   placeholder="Enter your License Number" maxlength="15"/>
-                        </div>
-                        <div class="col-sm-2" style="text-align: center">
-                            <button data-bind="disable: licenseNumber()=='', click:getLicenseClick " class="btn btn-primary search-btn"
-                                    style="margin-top:3%;">
-                                Get Started
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="row playstore desk">
+                        <!-- <div class="row playstore desk">
                         <div class="col-sm-4">
                             <a href="#"><img class="img-responsive col-centered" src="images/googlePay.png" alt=""></a>
                         </div>
                         <div class="col-sm-4">
                             <a href="#"><img class="img-responsive col-centered" src="images/appStore.png" alt=""></a>
                         </div>
+                    </div> -->
                     </div>
-                </div>
-                <div class="col-sm-4">
-
-                    <div class="row">
-                        <div class="col-sm-12 phoneImg">
-                            <img src="images/Picture1.png" class="img-responsive col-centered" alt="Chania">
+                    <div class="col-sm-4">
+                        <div class="row">
+                            <div class="col-sm-12 phoneImg">
+                                <img src="images/Picture1.png" class="img-responsive col-centered" alt="Chania">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row playstore mob">
+                <!-- <div class="row playstore mob">
                 <div class="col-sm-2 col-xs-6">
                     <a href="#"><img class="img-responsive col-centered" src="images/googlePay.png" alt=""></a>
                 </div>
                 <div class="col-sm-2 col-xs-6">
                     <a href="#"><img class="img-responsive col-centered" src="images/appStore.png" alt=""></a>
                 </div>
+            </div> -->
             </div>
         </div>
-    </div>
-    <div class="section" id="section1">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 topBar"><h2>Reech App is FREE and will always be !</h2></div> 
+        <div class="section" id="section1">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 topBar">
+                        <h2>Reech App is FREE and will always be !</h2></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" style="margin-top: 20px">
+                    <div class="col-sm-2 chat" style="text-align: left;">
+                        <img src="images/chat_orange.png" class="img-responsive col-centered" alt="Chania">
+                    </div>
+                    <div class="col-sm-8">
+                        <h3>Agent to Agent messaging</h3>
+                        <p>
+                            Ask question about new listings, communicate about ongoing transaction or just say hello to your fellow agents
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 chat">
+                        <img src="images/chat_blue.png" class="img-responsive col-centered" alt="Chania">
+                    </div>
+                    <div class="col-sm-8">
+                        <h3>Group messaging</h3>
+                        <p>
+                            Make your own group or join a group such as Broker tour, Training, events or anything important to your business
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 chat">
+                        <img src="images/chat_greeen.png" class="img-responsive col-centered" alt="Chania">
+                    </div>
+                    <div class="col-sm-8">
+                        <h3>Broker to Team messaging</h3>
+                        <p>
+                            Brokers can message their entire team, announce new office listings, send kudos for closed deals or that upcoming barbeque
+                        </p>
+                    </div>
+                </div>
+                <div class="row bottomBar">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <h3>Messaging has better Open and Response rates than email, call and voice mail combined. </h3>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row" style="margin-top: 20px">
-                <div class="col-sm-2 chat" style="text-align: left;">
-                    <img src="images/chat_orange.png" class="img-responsive col-centered" alt="Chania">
+        <div class="section" id="section2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>What are Agents saying about Reech App</h3>
+                    </div>
                 </div>
-                <div class="col-sm-8">
-                    <h3>Agent to Agent messaging</h3>
-                    <p>
-                    Ask question about new listings, communicate about ongoing transaction or just say hello to
-                    your fellow agents
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-2 chat">
-                    <img src="images/chat_blue.png" class="img-responsive col-centered" alt="Chania">
-                </div>
-                <div class="col-sm-8">
-                    <h3>Group messaging</h3>
-                    <p>
-                    Make your own group or join a group such as Broker tour, Training, events or anything
-                    important to your business
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-2 chat">
-                    <img src="images/chat_greeen.png" class="img-responsive col-centered" alt="Chania">
-                </div>
-                <div class="col-sm-8">
-                    <h3 >Broker to Team messaging</h3>
-                    <p>
-                    Brokers can message their entire team, announce new office listings, send kudos for closed
-                    deals or that upcoming barbeque
-                    </p>
-                </div>
-            </div>
-            <div class="row bottomBar">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-                <h3>Messaging has better Open and Response rates than email, call and voice mail combined. </h3>
-                </div>
-            </div>
-         </div>
-    </div>
-    <div class="section" id="section2">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h3>What are Agents saying about Reech App</h3>
-                </div>
-            </div>
-            <div class="row" style="margin-top: 20px">
-                <div class="col-sm-4">
-                    <div>
-                        <img class="img-responsive whoweare" src="images/who_1.png">
+                <div class="row" style="margin-top: 20px">
+                    <div class="col-sm-4">
+                        <div>
+                            <img class="img-responsive whoweare" src="images/who_1.png">
+                            <div class="image-text">
+                                This is one tool that we have been missing, this will not only help the agents connect with each other but would also help brokers communicate to their team effectively.
+                            </div>
+                            <div class="image-text orgName">
+                                Jonh Thompson
+                                <br> Intero
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <img class="img-responsive whoweare" src="images/who_2.png">
                         <div class="image-text">
-                        This is one tool that we have been missing, this will not only help the agents connect with each other but would also help brokers communicate to their team effectively.
+                            My team and I are already excited about using Reech App, This definitely helps us cut through the noise from emails and voicemails and lets agents collaborate in a productive way.
                         </div>
                         <div class="image-text orgName">
-                            Jonh Thompson<br> Intero
+                            Manmeet S. Bhasin
+                            <br> Ateev
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <img class="img-responsive whoweare" src="images/who_2.png">
-                    <div class="image-text">
-                        My team and I are already excited about using Reech App, This definitely helps us cut through the noise from emails and voicemails and lets agents collaborate in a productive way. 
-                    </div>
-                    <div class="image-text orgName">
-                            Manmeet S. Bhasin<br> Ateev
+                    <div class="col-sm-4">
+                        <img class="img-responsive whoweare" src="images/who_3.png">
+                        <div class="image-text">
+                            In all of my transactions I communicate a lot with listing or buying agents. Reech App helps me communicate with them in real time almost all the rime.
                         </div>
-                </div>
-                <div class="col-sm-4">
-                    <img class="img-responsive whoweare" src="images/who_3.png">
-                    <div class="image-text">
-                        In all of my transactions I communicate a lot with listing or buying agents. Reech App helps me communicate with them in real time almost all the rime.
-                    </div>
-                    <div class="image-text orgName">
-                        Monica Covington<br> Intero
+                        <div class="image-text orgName">
+                            Monica Covington
+                            <br> Intero
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="section">
-        <div class="container-fluid" id="includedContent">
+        <div class="section">
+            <div class="container-fluid" id="includedContent">
+            </div>
         </div>
     </div>
-</div>
 </body>
 
 </html>

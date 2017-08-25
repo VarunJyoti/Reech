@@ -48,7 +48,7 @@ router.get('/license/:id', function(req, res, next) {
             	} else
             	{
             		resObj[prop] = dbObj[prop]
-            	};
+            	}
         	}
         }
         res.json(resObj)

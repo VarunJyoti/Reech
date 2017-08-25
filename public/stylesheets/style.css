@@ -133,10 +133,8 @@ input {
 }
 
 @media screen and (max-width: 420px){
-
-    .reechappavailable {
-        //font-size: 3vw;
-        font-weight: normal;
+    .inner {
+        margin-top: -33px!important;
     }
     .title {
         margin-left: -45px;
@@ -145,10 +143,6 @@ input {
     }
     .linksection{
         margin-top: 10px;
-    }
-
-    .howitworks a{
-        //font-size: 3vw;
     }
 
     .playstore {
@@ -261,55 +255,17 @@ img {
 }
 
 .aboutreechHeading{
-    font-size: 1.5vw;
     text-align: center;
-    font-weight: bold;
 }
 
-.aboutreechTitleText{
-    font-size: 2vw;
-    font-weight: bold;
-    padding-top: 15px;
-    padding-bottom: 5px;
-}
 
 .reechforRealEstateHeading{
-    font-size: 2vw;
     text-align: center;
     color: #0095ff;
-    padding-top: 20px;
 }
 
 .reechforRealEstateHeading1{
     text-align: center;
-    font-size: 1.5vw;
-    padding-top: 20px;
-}
-.reechforRealEstateHeading2{
-    font-weight: bold;
-    padding-top: 10px;
-}
-
-@media screen and (max-width: 420px){
-    .aboutreechHeading{
-        font-size: 4vw;
-    }
-
-    .aboutreechText{
-        font-size: 4vw;
-    }
-    .aboutreechTitleText{
-        font-size: 4vw;
-    }
-
-    .reechforRealEstateHeading{
-        font-size: 4vw;
-    }
-
-    .reechforRealEstateHeading1{
-        font-size: 3.5vw;
-        padding-top: 10px;
-    }
 }
 
 .top:before{
@@ -325,12 +281,11 @@ img {
     top: 0;
     transition: all .5s;
     width: 100%;
-   // z-index: 1;
 }
 .top-agents:before {
     background-color: #FBFBFB;
-   background-image: url("../images/Agent_benefits.jpg"); 
-   background-position: center;
+    background-image: url("../images/Agent_benefits.jpg"); 
+    background-position: center;
     background-size: cover;
     content: '';
     display: block;
@@ -341,17 +296,17 @@ img {
     transition: all .5s;
     width: 100%;
 }
+#section1-home {
+    background-image: url("../images/home.png"); 
+    background-position: center;
+    background-size: cover;
+}
 .inner {
-  //position: absolute;
- // bottom: 0;
   background-color: #1A98FC;
   opacity: 0.8;
   color: #FAFAFA;
   text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-size: 20px;
-  margin-top: -38px;
+  margin-top: -41px;
 }
 
 ul {
