@@ -1,4 +1,3 @@
-
 body {
     font-size: 14px;
     font-family: "Lucida Grande";
@@ -304,6 +303,17 @@ img {
     background-image: url("../images/home.png"); 
     background-position: left bottom;
     background-size: cover;
+}
+
+#section1-aboutreech {
+    background-image: url("../images/About_us.png");
+    background-position: left bottom;
+    background-size: cover;
+}
+
+.ourStory {
+    margin-top: 2%;
+    margin-bottom: 1%;
 }
 .inner {
   background-color: #404040;
