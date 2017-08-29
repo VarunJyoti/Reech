@@ -63,8 +63,9 @@ h4{
 	color: #FAFAFA!important;
 }
 
-input {
+input, select {
     height: 50px !important;
+    font-size:16px!important
 }
 
 .introText {
@@ -133,6 +134,9 @@ input {
 }
 
 @media screen and (max-width: 420px){
+    #section1-home {
+        background-position: center!important;
+    }
     .inner {
         margin-top: -33px!important;
     }
@@ -174,6 +178,9 @@ input {
 }
 
 input::-webkit-input-placeholder {
+    color: #0095ff !important;
+}
+select, input {
     color: #0095ff !important;
 }
 
@@ -298,7 +305,7 @@ img {
 }
 #section1-home {
     background-image: url("../images/home.png"); 
-    background-position: center;
+    background-position: left bottom;
     background-size: cover;
 }
 .inner {
