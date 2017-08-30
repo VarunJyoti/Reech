@@ -100,6 +100,17 @@ input, select {
     color:#0095ff;
 }
 
+.howitworksAR a{
+    color:#fff;
+}
+
+.ontop {
+    position: absolute;
+    top: 20px;
+    right: 5%;
+    font-weight: bold;
+}
+
 .playstore.mob{
     visibility: hidden;
     display: none;
@@ -307,12 +318,12 @@ img {
 
 #section1-aboutreech {
     background-image: url("../images/About_us.png");
-    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-position: left top;
     background-size: cover;
 }
 
 .ourStory {
-    margin-top: 2%;
     margin-bottom: 1%;
 }
 .inner {
