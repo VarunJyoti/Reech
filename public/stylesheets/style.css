@@ -269,7 +269,7 @@ img {
 }
 
 .aboutreechHeading{
-    text-align: center;
+    //text-align: center;
 }
 
 
@@ -310,6 +310,20 @@ img {
     transition: all .5s;
     width: 100%;
 }
+.top-practices:before {
+    background-color: #FBFBFB;
+    background-image: url("../images/practices.jpg"); 
+    background-position: center;
+    background-size: cover;
+    content: '';
+    display: block;
+    height: 500px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all .5s;
+    width: 100%;
+}
 #section1-home {
     background-image: url("../images/home.png"); 
     background-position: left bottom;
@@ -336,9 +350,11 @@ img {
 
 ul {
     font-size: 20px;
-    font-weight: bold;
 }
 .contactus{
     border: 1px #dcd0d0 solid;
     padding: 20px;
+}
+h1, h2, h3, h4, h5 {
+    margin-top: 10px!important;
 }
