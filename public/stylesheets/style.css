@@ -213,6 +213,10 @@ input:-ms-input-placeholder {
 .phoneImg img{
     height: 450px;
 }
+.phoneImgPosition{
+    float: right;
+}
+
 @media screen and (max-width: 763px) {
     .phoneImg img{
         height: 225px!important;
@@ -229,6 +233,9 @@ input:-ms-input-placeholder {
     .phoneImg img{
         height: 205px!important;
         margin-top: 6%;
+    }
+    .phoneImgPosition{
+        float: none;
     }
     .col-sm-8 h3{margin-top: 2%;text-align: center;}
 }
