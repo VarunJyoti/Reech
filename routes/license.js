@@ -116,8 +116,7 @@ router.get('/mls', function(req, res, next) {
 });
 router.get('/officeName', function(req, res, next) {
 	var query  = req.query.query;
-	var ref = db.ref('employeeDB');
-	var arr = [];
+	var ref =  db.ref('employerDB');
     ref.on("value", function(s) {
         res.json(snapshotToArray(s, query, "empl_name"));
     });
