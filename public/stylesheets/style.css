@@ -358,6 +358,9 @@ img {
 ul {
     font-size: 20px;
 }
+ul.ppc {
+    font-size: inherit;
+}
 .contactus{
     border: 1px #dcd0d0 solid;
     padding: 20px;
